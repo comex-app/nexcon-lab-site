@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" fill="none" role="img" aria-label="Atlas Dashboard πØÍ¸Û∑Á√»ñô-	">
+  <rect width="960" height="540" rx="12" fill="#0f2137"/>
+  <rect x="24" y="24" width="912" height="48" rx="8" fill="#162d4a"/>
+  <rect x="40" y="40" width="120" height="16" rx="4" fill="#2563eb" opacity="0.8"/>
+  <rect x="24" y="96" width="280" height="420" rx="8" fill="#162d4a"/>
+  <rect x="320" y="96" width="616" height="180" rx="8" fill="#162d4a"/>
+  <rect x="340" y="116" width="200" height="12" rx="3" fill="#60a5fa"/>
+  <rect x="340" y="140" width="560" height="48" rx="6" fill="#2563eb" opacity="0.3"/>
+  <rect x="340" y="200" width="120" height="56" rx="6" fill="#22c55e" opacity="0.25"/>
+  <rect x="480" y="200" width="120" height="56" rx="6" fill="#eab308" opacity="0.25"/>
+  <rect x="620" y="200" width="120" height="56" rx="6" fill="#ef4444" opacity="0.25"/>
+  <rect x="320" y="296" width="616" height="220" rx="8" fill="#162d4a"/>
+  <rect x="340" y="316" width="576" height="32" rx="4" fill="#1e3a5f"/>
+  <rect x="340" y="360" width="576" height="32" rx="4" fill="#1e3a5f"/>
+  <rect x="340" y="404" width="576" height="32" rx="4" fill="#1e3a5f"/>
+  <text x="480" y="280" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8">PCe∑π≥¢  πØÍ¸Û∑Á√»ñô-</text>
+</svg>

@@ -321,6 +321,19 @@ a {
   color: var(--blue-400);
 }
 
+.product-link {
+  margin-top: auto;
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+  min-height: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+}
+
+.product-card:has(.product-link) .product-badge {
+  margin-top: 0;
+}
+
 .product-badge-line {
   background: rgba(6, 199, 85, 0.15);
   color: var(--line-green);
