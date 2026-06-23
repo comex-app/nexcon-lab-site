@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nexcon Lab — 中小企業の業務 DX と IT 基盤を支えるプロダクト開発。"
+    />
+    <title>Nexcon Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="brand" aria-label="Nexcon Lab ホーム">
+          <img
+            src="/logo-nexcon.svg"
+            alt="Nexcon Lab"
+            class="brand-logo"
+            width="180"
+            height="36"
+          />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section">
+        <div class="container hero-inner">
+          <p class="eyebrow">Business DX &amp; IT Infrastructure</p>
+          <h1>
+            現場の業務を、<br class="hide-mobile" />
+            テクノロジーで支える。
+          </h1>
+          <p class="hero-lead">
+            Nexcon Lab は、中小企業向けに PC 健康管理から予約・顧客接点まで、
+            使いやすいプロダクトを開発しています。
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Products を見る</a>
+            <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
+          </div>
+        </div>
+        <div class="hero-glow" aria-hidden="true"></div>
+      </section>
+
+      <section id="products" class="products section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Products</p>
+            <h2>プロダクト</h2>
+            <p class="section-lead">
+              社内 IT の安定と、対外の顧客接点。それぞれの課題に向き合う製品を提供します。
+            </p>
+          </div>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-icon" aria-hidden="true">A</div>
+              <h3>Atlas Health Platform</h3>
+              <p class="product-tagline">PC 健康監視・診断・安全修復</p>
+              <p>
+                IT 担当がいなくても、PC の健康状態を見える化し、容量不足や Outlook
+                障害の予兆を早期に発見。安全な修復フローまで一気通貫で支援します。
+              </p>
+              <ul class="product-features">
+                <li>PC健康スコア &amp; ダッシュボード</li>
+                <li>Telemetry による継続監視</li>
+                <li>Guardrails 付き安全修復</li>
+              </ul>
+              <span class="product-badge">Pilot Edition</span>
+            </article>
+
+            <article class="product-card">
+              <div class="product-icon product-icon-line" aria-hidden="true">L</div>
+              <h3>LINE予約システム</h3>
+              <p class="product-tagline">予約・顧客接点の DX</p>
+              <p>
+                店舗・クリニック・サービス業向けに、LINE を活用した予約体験を提供。
+                受付業務の効率化と、顧客との接点強化を支援します。
+              </p>
+              <ul class="product-features">
+                <li>LINE 連携予約フロー</li>
+                <li>店舗向け管理画面</li>
+                <li>リマインド・顧客管理</li>
+              </ul>
+              <span class="product-badge product-badge-line">Available</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about section">
+        <div class="container about-inner">
+          <div class="section-head">
+            <p class="eyebrow">About</p>
+            <h2>Nexcon Lab について</h2>
+          </div>
+          <div class="about-content">
+            <p>
+              Nexcon Lab は、中小企業が抱える「IT 力不足」と「業務デジタル化」のギャップを
+              埋めるプロダクトを開発するチームです。
+            </p>
+            <p>
+              専門用語を排し、総務・事務・経営層がそのまま使える UI と、
+              現場で回る運用設計を大切にしています。
+            </p>
+            <dl class="about-facts">
+              <div>
+                <dt>ミッション</dt>
+                <dd>IT が弱い組織でも、テクノロジーの恩恵を受けられる世界をつくる</dd>
+              </div>
+              <div>
+                <dt>フォーカス</dt>
+                <dd>PC 基盤の予防保守 / 予約・顧客接点 DX</dd>
+              </div>
+              <div>
+                <dt>拠点</dt>
+                <dd>日本（リモート開発）</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section">
+        <div class="container contact-inner">
+          <div class="section-head">
+            <p class="eyebrow">Contact</p>
+            <h2>お問い合わせ</h2>
+            <p class="section-lead">
+              製品の導入、パートナーシップ、メディア取材など、お気軽にご連絡ください。
+            </p>
+          </div>
+          <div class="contact-card">
+            <p class="contact-note">
+              現在、サイトは仮公開中です。以下はダミーの連絡先です。
+            </p>
+            <a href="mailto:hello@nexcon-lab.com" class="contact-email">hello@nexcon-lab.com</a>
+            <p class="contact-hours">受付時間: 平日 10:00 – 18:00（JST）</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <img
+          src="/logo-nexcon.svg"
+          alt=""
+          class="footer-logo"
+          width="140"
+          height="28"
+          aria-hidden="true"
+        />
+        <p>&copy; 2026 Nexcon Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

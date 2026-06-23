@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none" role="img" aria-label="Nexcon Lab">
+  <rect x="0" y="4" width="40" height="40" rx="10" fill="#2563EB"/>
+  <path d="M12 32V16h4l8 10V16h4v16h-4l-8-10v10h-4z" fill="#fff"/>
+  <text x="52" y="32" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#F8FAFC">Nexcon Lab</text>
+</svg>
