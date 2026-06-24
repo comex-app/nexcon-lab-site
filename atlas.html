@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Atlas Health Platform — IT 担当不在の中小企業向け PC 健康管理。全社 PC を見える化し、トラブルを未然に防ぎます。"
+      content="PCが止まる前に、気づける。Atlas Health Platformは中小企業向けPC予防保守プラットフォームです。"
     />
+    <meta
+      name="keywords"
+      content="Atlas, PC管理, IT資産管理, Windows管理, 中小企業DX, Nexcon Lab"
+    />
+    <meta property="og:title" content="Atlas Health Platform | Nexcon Lab" />
+    <meta
+      property="og:description"
+      content="PCが止まる前に、気づける。"
+    />
+    <meta property="og:type" content="website" />
     <title>Atlas Health Platform | Nexcon Lab</title>
     <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
     <link rel="stylesheet" href="/src/style.css" />
@@ -27,7 +37,7 @@
         <nav class="site-nav" aria-label="メインナビゲーション">
           <a href="/">Home</a>
           <a href="/atlas" class="nav-active">Atlas</a>
-          <a href="/#contact">Contact</a>
+          <a href="#contact">Contact</a>
         </nav>
         <button
           type="button"
@@ -44,7 +54,7 @@
       <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
         <a href="/">Home</a>
         <a href="/atlas">Atlas</a>
-        <a href="/#contact">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -73,9 +83,19 @@
               全社 PC の健康状態を見える化し、<br class="hide-mobile" />
               トラブルを未然に防ぎます。
             </p>
-            <div class="hero-actions">
-              <a href="#contact" class="btn btn-primary">デモを見る</a>
-              <a href="mailto:hello@nexcon-lab.com?subject=Atlas%20お問い合わせ" class="btn btn-secondary">お問い合わせ</a>
+            <div class="hero-actions atlas-hero-actions">
+              <a
+                href="mailto:hello@nexcon-lab.com?subject=Atlas%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+                class="btn btn-primary"
+              >デモを依頼する</a>
+              <a
+                href="mailto:hello@nexcon-lab.com?subject=Atlas%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+                class="btn btn-secondary"
+              >資料を請求する</a>
+              <a
+                href="mailto:hello@nexcon-lab.com?subject=Atlas%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+                class="btn btn-secondary"
+              >お問い合わせ</a>
             </div>
             <span class="product-badge atlas-badge">Pilot Edition v0.4</span>
           </div>
@@ -377,49 +397,39 @@
         </div>
       </section>
 
-      <!-- CTA -->
+      <!-- Contact -->
       <section id="contact" class="contact atlas-contact section">
         <div class="container contact-inner">
           <div class="section-head">
             <p class="eyebrow">Contact</p>
-            <h2>お問い合わせ</h2>
+            <h2>Atlasについて相談する</h2>
             <p class="section-lead">
-              デモ・資料・導入のご相談は、お気軽にご連絡ください。
+              Atlasは現在 Pilot Edition として実証導入パートナーを募集しています。<br />
+              導入相談、デモ依頼、資料請求などお気軽にお問い合わせください。
             </p>
           </div>
-          <div class="cta-grid">
+          <div class="contact-actions">
             <a
-              href="mailto:hello@nexcon-lab.com?subject=Atlas%20デモ依頼"
-              class="cta-card"
-            >
-              <h3>デモ依頼</h3>
-              <p>Dashboard のデモをご覧いただけます</p>
-              <span class="cta-link">メールを送る →</span>
-            </a>
-            <a
-              href="mailto:hello@nexcon-lab.com?subject=Atlas%20資料請求"
-              class="cta-card"
-            >
-              <h3>資料請求</h3>
-              <p>製品概要資料をお送りします</p>
-              <span class="cta-link">メールを送る →</span>
-            </a>
-            <a
-              href="mailto:hello@nexcon-lab.com?subject=Atlas%20お問い合わせ"
-              class="cta-card cta-card-primary"
-            >
-              <h3>お問い合わせ</h3>
-              <p>導入・パートナーシップのご相談</p>
-              <span class="cta-link">メールを送る →</span>
-            </a>
+              href="mailto:hello@nexcon-lab.com?subject=Atlas%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+              class="btn btn-primary contact-inquiry-btn"
+            >Atlasについて問い合わせる</a>
           </div>
-          <p class="contact-hours">受付: 平日 10:00 – 18:00（JST） / hello@nexcon-lab.com</p>
+          <div class="reservation-placeholder" aria-disabled="true">
+            <p class="reservation-placeholder-title">オンライン相談予約（準備中）</p>
+            <p class="reservation-placeholder-note">
+              今後 Atlas デモ予約システムと連携予定です。
+            </p>
+          </div>
+          <p class="contact-hours">
+            受付: 平日 10:00 – 18:00（JST） /
+            <a href="mailto:hello@nexcon-lab.com?subject=Atlas%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">hello@nexcon-lab.com</a>
+          </p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
+      <div class="container footer-inner atlas-footer-inner">
         <img
           src="/logo-nexcon.svg"
           alt=""
@@ -428,12 +438,19 @@
           height="28"
           aria-hidden="true"
         />
+        <div class="footer-products">
+          <p class="footer-products-title">Products</p>
+          <ul class="footer-products-list">
+            <li><a href="/atlas">Atlas Health Platform</a></li>
+            <li><span class="footer-coming-soon">LINE Reservation System（Coming Soon）</span></li>
+          </ul>
+        </div>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
           <a href="/">Home</a>
           <a href="/atlas">Atlas</a>
-          <a href="/#products">Products</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <p>&copy; 2026 Nexcon Lab. All rights reserved.</p>
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
       </div>
     </footer>
 
