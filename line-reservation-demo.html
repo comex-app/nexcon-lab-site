@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nexcon Lab LINE予約システム — 営業デモ（予約フロー体験）" />
+    <meta name="robots" content="noindex" />
+    <title>予約デモ | LINE予約システム | Nexcon Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/line-reservation.css" />
+    <link rel="stylesheet" href="/src/line-demo.css" />
+  </head>
+  <body class="page-line-reservation page-line-demo">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Nexcon Lab ホーム">
+          <img
+            src="/logo-nexcon.svg"
+            alt="Nexcon Lab"
+            class="brand-logo"
+            width="180"
+            height="36"
+          />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/">Home</a>
+          <a href="/atlas">Atlas</a>
+          <a href="/line-reservation" class="nav-active">LINE予約</a>
+          <a href="/line-reservation#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="/">Home</a>
+        <a href="/atlas">Atlas</a>
+        <a href="/line-reservation">LINE予約</a>
+        <a href="/line-reservation#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="line-demo-main">
+      <div class="container line-demo-layout">
+        <div class="line-demo-intro">
+          <p class="eyebrow">Sales Demo</p>
+          <h1>LINE 予約デモ</h1>
+          <p class="line-demo-intro-lead">
+            実際の予約フローを体験できます。<br />
+            入力内容は保存されません（営業用デモ）。
+          </p>
+          <a href="/line-reservation" class="line-demo-back-link">← 製品ページに戻る</a>
+        </div>
+
+        <div class="line-phone-shell" aria-label="LINE予約デモ画面">
+          <div class="line-phone-frame">
+            <div class="line-app">
+              <header class="line-app-header">
+                <a href="/line-reservation" class="line-app-back" aria-label="戻る">‹</a>
+                <div class="line-app-title">
+                  <img
+                    src="/line-reservation/logo-line.svg"
+                    alt=""
+                    width="28"
+                    height="28"
+                    aria-hidden="true"
+                  />
+                  <span>デモ店舗 予約</span>
+                </div>
+                <span class="line-app-header-spacer" aria-hidden="true"></span>
+              </header>
+
+              <div class="line-app-body">
+                <!-- 予約フォーム -->
+                <section id="demo-form-view" class="line-app-view">
+                  <div class="line-chat-hint">
+                    <div class="line-chat-bubble">ご希望の日時と人数を入力してください。</div>
+                  </div>
+
+                  <form id="reservation-form" class="line-reservation-form" novalidate>
+                    <div class="line-field">
+                      <label for="guest-name">お名前</label>
+                      <input
+                        type="text"
+                        id="guest-name"
+                        name="name"
+                        required
+                        autocomplete="name"
+                        placeholder="山田 太郎"
+                      />
+                    </div>
+
+                    <div class="line-field">
+                      <label for="guest-count">人数</label>
+                      <select id="guest-count" name="guests" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="1">1 名</option>
+                        <option value="2">2 名</option>
+                        <option value="3">3 名</option>
+                        <option value="4">4 名</option>
+                        <option value="5">5 名</option>
+                        <option value="6">6 名</option>
+                        <option value="7">7 名</option>
+                        <option value="8">8 名以上</option>
+                      </select>
+                    </div>
+
+                    <div class="line-field">
+                      <label for="reserve-date">日付</label>
+                      <input type="date" id="reserve-date" name="date" required />
+                    </div>
+
+                    <div class="line-field">
+                      <label for="reserve-time">時間</label>
+                      <select id="reserve-time" name="time" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                      </select>
+                    </div>
+
+                    <p id="form-error" class="line-form-error" hidden role="alert"></p>
+
+                    <button type="submit" class="line-submit-btn">予約する</button>
+                  </form>
+
+                  <p class="line-demo-note">※ これは Nexcon Lab の営業用デモです</p>
+                </section>
+
+                <!-- 確認画面 -->
+                <section id="demo-success-view" class="line-app-view" hidden>
+                  <div class="line-success-icon" aria-hidden="true">✓</div>
+                  <h2 class="line-success-title">予約ありがとうございました</h2>
+                  <p class="line-success-lead">これは営業用デモです。</p>
+
+                  <dl class="line-success-summary" id="success-summary">
+                    <div>
+                      <dt>お名前</dt>
+                      <dd data-field="name">—</dd>
+                    </div>
+                    <div>
+                      <dt>人数</dt>
+                      <dd data-field="guests">—</dd>
+                    </div>
+                    <div>
+                      <dt>日時</dt>
+                      <dd data-field="datetime">—</dd>
+                    </div>
+                  </dl>
+
+                  <div class="line-chat-hint line-chat-hint-success">
+                    <div class="line-chat-bubble">
+                      ご予約を承りました。確認メッセージを LINE でお送りします（デモ）。
+                    </div>
+                  </div>
+
+                  <div class="line-success-actions">
+                    <button type="button" id="demo-reset-btn" class="line-submit-btn line-submit-btn-secondary">
+                      もう一度試す
+                    </button>
+                    <a href="/line-reservation" class="line-text-link">製品ページへ戻る</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer line-demo-footer">
+      <div class="container footer-inner">
+        <img
+          src="/logo-nexcon.svg"
+          alt=""
+          class="footer-logo"
+          width="140"
+          height="28"
+          aria-hidden="true"
+        />
+        <p class="line-demo-footer-note">Nexcon Lab — LINE予約システム 営業デモ</p>
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/line-demo.js"></script>
+  </body>
+</html>

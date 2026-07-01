@@ -1,0 +1,361 @@
+/* LINE Reservation Demo — sales demo UI */
+
+.page-line-demo {
+  background: var(--navy-950);
+}
+
+.line-demo-main {
+  padding: 2.5rem 0 4rem;
+  min-height: calc(100vh - 12rem);
+}
+
+.line-demo-layout {
+  display: grid;
+  grid-template-columns: 1fr min(100%, 22rem);
+  gap: 3rem;
+  align-items: start;
+}
+
+.line-demo-intro h1 {
+  margin: 0.5rem 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.line-demo-intro-lead {
+  margin: 0 0 1.5rem;
+  max-width: 28rem;
+  color: var(--white-muted);
+  font-size: 0.9375rem;
+}
+
+.line-demo-back-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--line-green);
+}
+
+.line-demo-back-link:hover {
+  color: var(--white);
+}
+
+/* Phone frame */
+.line-phone-shell {
+  display: flex;
+  justify-content: center;
+}
+
+.line-phone-frame {
+  width: 100%;
+  max-width: 22rem;
+  border-radius: 1.75rem;
+  border: 3px solid rgba(148, 163, 184, 0.25);
+  background: #1a1a1a;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  overflow: hidden;
+}
+
+.line-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 36rem;
+  background: #f5f5f5;
+  color: #111;
+}
+
+.line-app-header {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 2.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.65rem;
+  background: var(--line-green);
+  color: #fff;
+}
+
+.line-app-back {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.line-app-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.line-app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.line-app-title img {
+  border-radius: 0.375rem;
+}
+
+.line-app-body {
+  flex: 1;
+  padding: 1rem 1rem 1.25rem;
+  overflow-y: auto;
+}
+
+.line-app-view[hidden] {
+  display: none !important;
+}
+
+/* Chat hint */
+.line-chat-hint {
+  margin-bottom: 1.25rem;
+}
+
+.line-chat-bubble {
+  display: inline-block;
+  max-width: 92%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 1rem 1rem 1rem 0.25rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #374151;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.line-chat-hint-success {
+  margin-top: 1.25rem;
+}
+
+.line-chat-hint-success .line-chat-bubble {
+  background: #e8f9ef;
+  border-color: rgba(6, 199, 85, 0.25);
+  color: #166534;
+}
+
+/* Form */
+.line-reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.line-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.line-field input,
+.line-field select {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.625rem;
+  background: #fff;
+  color: #111;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.line-field input:focus,
+.line-field select:focus {
+  outline: none;
+  border-color: var(--line-green);
+  box-shadow: 0 0 0 3px rgba(6, 199, 85, 0.2);
+}
+
+.line-field input:invalid:not(:placeholder-shown),
+.line-field select:invalid {
+  border-color: #f87171;
+}
+
+.line-form-error {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+}
+
+.line-submit-btn {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 0.625rem;
+  background: var(--line-green);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.line-submit-btn:hover {
+  background: #05b34c;
+}
+
+.line-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.line-submit-btn-secondary {
+  background: #fff;
+  color: var(--line-green);
+  border: 2px solid var(--line-green);
+}
+
+.line-submit-btn-secondary:hover {
+  background: #e8f9ef;
+}
+
+.line-demo-note {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.6875rem;
+  color: #9ca3af;
+}
+
+/* Success */
+.line-success-icon {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem auto 1.25rem;
+  border-radius: 999px;
+  background: var(--line-green);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.line-success-title {
+  margin: 0 0 0.35rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.line-success-lead {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.line-success-summary {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.line-success-summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.line-success-summary div + div {
+  border-top: 1px solid #f3f4f6;
+}
+
+.line-success-summary dt {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.line-success-summary dd {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  text-align: right;
+}
+
+.line-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.line-text-link {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--line-green);
+}
+
+.line-text-link:hover {
+  color: #05b34c;
+}
+
+/* Footer */
+.line-demo-footer .footer-inner {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.line-demo-footer-note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--white-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .line-demo-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .line-demo-intro {
+    text-align: center;
+    max-width: 28rem;
+  }
+
+  .line-demo-intro-lead {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .line-demo-main {
+    padding-top: 1.5rem;
+  }
+
+  .line-phone-frame {
+    border-radius: 1.25rem;
+    border-width: 2px;
+  }
+
+  .line-app {
+    min-height: 32rem;
+  }
+}

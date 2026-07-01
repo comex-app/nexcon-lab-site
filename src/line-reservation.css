@@ -246,6 +246,41 @@
   background: var(--navy-950);
 }
 
+.demo-launch-card {
+  margin-top: 2rem;
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent-border);
+  background: linear-gradient(160deg, rgba(6, 199, 85, 0.1) 0%, rgba(15, 33, 55, 0.95) 100%);
+  text-align: center;
+}
+
+.demo-launch-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.demo-launch-card p {
+  margin: 0 0 1.5rem;
+  color: var(--white-muted);
+  font-size: 0.9375rem;
+}
+
+.demo-launch-card .btn {
+  min-width: 12rem;
+}
+
+.line-mockup-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s;
+}
+
+.line-mockup-link:hover {
+  transform: translateY(-2px);
+}
+
 .demo-placeholder {
   margin-top: 2rem;
   padding: 3rem 2rem;
