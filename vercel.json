@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/atlas", "destination": "/atlas.html" }
+    { "source": "/atlas", "destination": "/atlas.html" },
+    { "source": "/line-reservation", "destination": "/line-reservation.html" }
   ]
 }

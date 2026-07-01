@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         atlas: resolve(__dirname, "atlas.html"),
+        lineReservation: resolve(__dirname, "line-reservation.html"),
       },
     },
   },

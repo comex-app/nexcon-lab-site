@@ -1,0 +1,344 @@
+/* LINE Reservation Landing Page — extends style.css + atlas patterns */
+
+.page-line-reservation {
+  --accent: var(--line-green);
+  --accent-soft: rgba(6, 199, 85, 0.15);
+  --accent-border: rgba(6, 199, 85, 0.4);
+}
+
+.page-line-reservation .site-nav .nav-active {
+  color: var(--white);
+}
+
+.page-line-reservation .hero-product-name,
+.page-line-reservation .feature-card h3,
+.page-line-reservation .industry-card h3,
+.page-line-reservation .benefit-card h3 {
+  color: var(--line-green);
+}
+
+.page-line-reservation .flow-num,
+.page-line-reservation .product-badge {
+  background: var(--accent-soft);
+  color: var(--line-green);
+}
+
+/* Hero */
+.line-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.line-hero-copy {
+  max-width: 36rem;
+}
+
+.line-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.line-product-logo {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+}
+
+.line-badge {
+  display: inline-block;
+  margin-top: 1.5rem;
+  border-color: var(--accent-border);
+  color: var(--line-green);
+}
+
+.line-hero-actions {
+  gap: 0.75rem;
+}
+
+.line-hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.line-mockup {
+  width: min(100%, 20rem);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(160deg, rgba(15, 33, 55, 0.95) 0%, rgba(10, 22, 40, 0.98) 100%);
+  box-shadow: var(--shadow);
+}
+
+.line-mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.line-mockup-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--line-green);
+}
+
+.line-mockup-bubble {
+  max-width: 85%;
+  margin-bottom: 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+  background: rgba(6, 199, 85, 0.2);
+  border: 1px solid rgba(6, 199, 85, 0.25);
+  font-size: 0.8125rem;
+  color: var(--white-muted);
+}
+
+.line-mockup-bubble-user {
+  margin-left: auto;
+  border-radius: 0.75rem 0.75rem 0.25rem 0.75rem;
+  background: var(--navy-800);
+  border-color: rgba(148, 163, 184, 0.2);
+  text-align: right;
+}
+
+.line-mockup-label {
+  margin: 1rem 0 0;
+  font-size: 0.6875rem;
+  text-align: center;
+  color: rgba(148, 163, 184, 0.65);
+}
+
+/* Features */
+.line-features {
+  background: var(--navy-900);
+}
+
+.line-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.line-feature-grid .feature-card {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: var(--navy-800);
+}
+
+.line-feature-grid .feature-icon {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.375rem;
+}
+
+.line-feature-grid h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.line-feature-grid p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--white-muted);
+}
+
+/* Industries */
+.line-industries {
+  background: var(--navy-950);
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.industry-card {
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: var(--navy-800);
+  text-align: center;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.industry-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.industry-icon {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
+}
+
+.industry-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.industry-card p {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--white-muted);
+}
+
+/* Benefits */
+.line-benefits {
+  background: var(--navy-900);
+}
+
+.benefit-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.benefit-card {
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: var(--navy-800);
+  text-align: center;
+}
+
+.benefit-card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 1.25rem;
+}
+
+.benefit-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.benefit-card p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--white-muted);
+}
+
+/* Demo placeholder */
+.line-demo {
+  background: var(--navy-950);
+}
+
+.demo-placeholder {
+  margin-top: 2rem;
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+  background: rgba(15, 33, 55, 0.6);
+  text-align: center;
+}
+
+.demo-placeholder h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.demo-placeholder p {
+  margin: 0;
+  max-width: 28rem;
+  margin-inline: auto;
+  font-size: 0.9375rem;
+  color: var(--white-muted);
+}
+
+/* Contact */
+.line-contact .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.line-contact .contact-hours {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--white-muted);
+}
+
+.line-contact .contact-hours a {
+  color: var(--line-green);
+}
+
+.line-contact .contact-hours a:hover {
+  color: var(--white);
+}
+
+.line-footer-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: start;
+  gap: 1.5rem 2rem;
+}
+
+.footer-products-list a.is-active {
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .line-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .line-hero-visual {
+    order: -1;
+  }
+
+  .line-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .industry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefit-grid-three {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .line-feature-grid,
+  .industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .line-footer-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .line-mockup {
+    width: 100%;
+  }
+}

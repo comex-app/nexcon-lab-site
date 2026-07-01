@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="電話予約をゼロへ。Nexcon Lab の LINE予約システムは、飲食店・美容室・クリニックなど向けに LINE だけで予約受付から自動通知・管理画面までを一元化します。"
+    />
+    <meta
+      name="keywords"
+      content="LINE予約, 予約システム, 飲食店, 美容室, クリニック, Nexcon Lab"
+    />
+    <meta property="og:title" content="LINE予約システム | Nexcon Lab" />
+    <meta
+      property="og:description"
+      content="電話予約をゼロへ。LINEだけで予約受付、自動通知、管理画面による一元管理まで。"
+    />
+    <meta property="og:type" content="website" />
+    <title>LINE予約システム | Nexcon Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/line-reservation.css" />
+  </head>
+  <body class="page-line-reservation">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Nexcon Lab ホーム">
+          <img
+            src="/logo-nexcon.svg"
+            alt="Nexcon Lab"
+            class="brand-logo"
+            width="180"
+            height="36"
+          />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/">Home</a>
+          <a href="/atlas">Atlas</a>
+          <a href="/line-reservation" class="nav-active">LINE予約</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="/">Home</a>
+        <a href="/atlas">Atlas</a>
+        <a href="/line-reservation">LINE予約</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="hero section">
+        <div class="container line-hero-grid">
+          <div class="line-hero-copy">
+            <div class="line-brand-row">
+              <img
+                src="/line-reservation/logo-line.svg"
+                alt=""
+                class="line-product-logo"
+                width="48"
+                height="48"
+                aria-hidden="true"
+              />
+              <div>
+                <p class="eyebrow">LINE Reservation System</p>
+                <p class="hero-product-name">Nexcon Lab / LINE Booking</p>
+              </div>
+            </div>
+            <h1>電話予約をゼロへ。</h1>
+            <p class="hero-lead">
+              LINE だけで予約受付、<br class="hide-mobile" />
+              自動通知、<br class="hide-mobile" />
+              管理画面による一元管理まで。
+            </p>
+            <div class="hero-actions line-hero-actions">
+              <a href="#demo" class="btn btn-primary">デモを見る</a>
+              <a
+                href="mailto:hello@nexcon-lab.com?subject=LINE%E4%BA%88%E7%B4%84%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+                class="btn btn-secondary"
+              >お問い合わせ</a>
+            </div>
+            <span class="product-badge line-badge">Available</span>
+          </div>
+          <div class="line-hero-visual" aria-hidden="true">
+            <div class="line-mockup">
+              <div class="line-mockup-header">
+                <span class="line-mockup-dot"></span>
+                予約受付（イメージ）
+              </div>
+              <div class="line-mockup-bubble">本日 14:00 のご予約枠が空いています。</div>
+              <div class="line-mockup-bubble line-mockup-bubble-user">14:00 で予約します</div>
+              <div class="line-mockup-bubble">ご予約を承りました。確認メッセージをお送りします。</div>
+              <p class="line-mockup-label">※ 画面イメージ（デモ準備中）</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-glow" aria-hidden="true"></div>
+      </section>
+
+      <!-- 特徴 -->
+      <section id="features" class="line-features section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Features</p>
+            <h2>LINE予約システムの特徴</h2>
+            <p class="section-lead">
+              お客様は LINE から、店舗側は管理画面から。予約業務をシンプルにします。
+            </p>
+          </div>
+          <div class="line-feature-grid">
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">💬</span>
+              <h3>LINE だけで予約可能</h3>
+              <p>アプリの新規インストール不要。お客様が使い慣れた LINE からそのまま予約できます。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🌙</span>
+              <h3>24 時間受付</h3>
+              <p>営業時間外も予約を受け付け。電話がつながらない時間帯の機会損失を減らします。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🔔</span>
+              <h3>自動通知</h3>
+              <p>予約確定・リマインドを LINE で自動送信。スタッフの手作業を削減します。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">🔄</span>
+              <h3>予約変更対応</h3>
+              <p>日時変更やキャンセルも LINE 上で完結。電話でのやり取りを減らせます。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">📊</span>
+              <h3>管理画面</h3>
+              <p>予約一覧・ステータス管理をブラウザで一元管理。複数スタッフでの運用にも対応。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-icon" aria-hidden="true">📱</span>
+              <h3>スマホ対応</h3>
+              <p>お客様も店舗スタッフも、スマートフォン中心の UI で快適に利用できます。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 対応業種 -->
+      <section id="industries" class="line-industries section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Industries</p>
+            <h2>対応業種</h2>
+            <p class="section-lead">
+              予約・来店・受付がある業種全般に対応。業態に合わせたカスタマイズも可能です。
+            </p>
+          </div>
+          <div class="industry-grid">
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">🍽</span>
+              <h3>飲食店</h3>
+              <p>席予約・テイクアウト受取</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">💇</span>
+              <h3>美容</h3>
+              <p>サロン・ネイル・エステ</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">🧘</span>
+              <h3>整体</h3>
+              <p>施術予約・リピート管理</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">⛩</span>
+              <h3>寺院</h3>
+              <p>法要・参拝・イベント受付</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">🎪</span>
+              <h3>イベント</h3>
+              <p>参加申込・当日受付</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">🏥</span>
+              <h3>クリニック</h3>
+              <p>診察・検査の予約受付</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">🏛</span>
+              <h3>自治体</h3>
+              <p>窓口予約・相談受付</p>
+            </article>
+            <article class="industry-card">
+              <span class="industry-icon" aria-hidden="true">✨</span>
+              <h3>その他</h3>
+              <p>予約・来店があるサービス全般</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 導入メリット -->
+      <section id="benefits" class="line-benefits section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Benefits</p>
+            <h2>導入メリット</h2>
+          </div>
+          <div class="benefit-grid-three">
+            <article class="benefit-card">
+              <span class="benefit-card-icon" aria-hidden="true">📞</span>
+              <h3>電話対応削減</h3>
+              <p>予約電話の対応時間を削減。スタッフは接客と本来業務に集中できます。</p>
+            </article>
+            <article class="benefit-card">
+              <span class="benefit-card-icon" aria-hidden="true">✅</span>
+              <h3>予約ミス削減</h3>
+              <p>聞き間違い・記入ミスを防ぎ、予約情報をデジタルで正確に管理します。</p>
+            </article>
+            <article class="benefit-card">
+              <span class="benefit-card-icon" aria-hidden="true">😊</span>
+              <h3>顧客満足度向上</h3>
+              <p>いつでも予約でき、確認通知も届く。お客様のストレスを減らします。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- デモ（準備中） -->
+      <section id="demo" class="line-demo section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Demo</p>
+            <h2>デモ</h2>
+          </div>
+          <div class="demo-placeholder">
+            <h3>インタラクティブデモは準備中です</h3>
+            <p>
+              現在、Nexcon Lab サイト上でのライブデモを準備しています。
+              先行体験・導入のご相談はお問い合わせください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact line-contact section">
+        <div class="container contact-inner">
+          <div class="section-head">
+            <p class="eyebrow">Contact</p>
+            <h2>LINE予約システムについて相談する</h2>
+            <p class="section-lead">
+              導入相談、デモ依頼、お見積りなど、お気軽にお問い合わせください。<br />
+              業種・規模に合わせた構成をご提案します。
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a href="#demo" class="btn btn-secondary">デモを見る</a>
+            <a
+              href="mailto:hello@nexcon-lab.com?subject=LINE%E4%BA%88%E7%B4%84%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
+              class="btn btn-primary contact-inquiry-btn"
+            >お問い合わせ</a>
+          </div>
+          <p class="contact-hours">
+            受付: 平日 10:00 – 18:00（JST） /
+            <a href="mailto:hello@nexcon-lab.com?subject=LINE%E4%BA%88%E7%B4%84%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">hello@nexcon-lab.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner line-footer-inner">
+        <img
+          src="/logo-nexcon.svg"
+          alt=""
+          class="footer-logo"
+          width="140"
+          height="28"
+          aria-hidden="true"
+        />
+        <div class="footer-products">
+          <p class="footer-products-title">Products</p>
+          <ul class="footer-products-list">
+            <li><a href="/atlas">Atlas Health Platform</a></li>
+            <li><a href="/line-reservation" class="is-active">LINE予約システム</a></li>
+          </ul>
+        </div>
+        <nav class="footer-nav" aria-label="フッターナビゲーション">
+          <a href="/">Home</a>
+          <a href="/atlas">Atlas</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
