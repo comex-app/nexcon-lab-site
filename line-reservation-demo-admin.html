@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nexcon Lab LINE予約システム — 管理画面デモ" />
+    <meta name="robots" content="noindex" />
+    <title>管理画面デモ | LINE予約システム | Nexcon Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/line-reservation.css" />
+    <link rel="stylesheet" href="/src/line-admin.css" />
+  </head>
+  <body class="page-line-reservation page-line-admin">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Nexcon Lab ホーム">
+          <img
+            src="/logo-nexcon.svg"
+            alt="Nexcon Lab"
+            class="brand-logo"
+            width="180"
+            height="36"
+          />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/">Home</a>
+          <a href="/atlas">Atlas</a>
+          <a href="/line-reservation" class="nav-active">LINE予約</a>
+          <a href="/line-reservation/demo">予約デモ</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="/">Home</a>
+        <a href="/atlas">Atlas</a>
+        <a href="/line-reservation">LINE予約</a>
+        <a href="/line-reservation/demo">予約デモ</a>
+      </nav>
+    </header>
+
+    <main class="line-admin-main">
+      <div class="container">
+        <div class="line-admin-topbar">
+          <div>
+            <p class="eyebrow">Admin Demo</p>
+            <h1>LINE予約 管理画面</h1>
+          </div>
+          <span class="line-admin-demo-badge">Sales Demo · ダミーデータ</span>
+        </div>
+
+        <div class="line-admin-layout">
+          <div class="line-admin-content">
+            <nav class="line-admin-nav" aria-label="管理画面ナビ">
+              <button type="button" class="line-admin-nav-btn is-active" data-view="dashboard">
+                ダッシュボード
+              </button>
+              <button type="button" class="line-admin-nav-btn" data-view="list">予約一覧</button>
+            </nav>
+
+            <!-- Dashboard -->
+            <section id="admin-dashboard-view" class="line-admin-view">
+              <div class="line-admin-panel" style="margin-top: 1rem">
+                <div class="line-admin-panel-head">
+                  <div>
+                    <h2>本日のサマリー</h2>
+                    <p>デモ店舗 — 2026年6月26日（金）</p>
+                  </div>
+                </div>
+                <div class="admin-kpi-grid">
+                  <article class="admin-kpi-card admin-kpi-card--accent">
+                    <p class="admin-kpi-label">本日の予約件数</p>
+                    <p class="admin-kpi-value" id="kpi-today-count">—</p>
+                  </article>
+                  <article class="admin-kpi-card">
+                    <p class="admin-kpi-label">来店予定人数</p>
+                    <p class="admin-kpi-value" id="kpi-guest-count">—</p>
+                  </article>
+                  <article class="admin-kpi-card">
+                    <p class="admin-kpi-label">キャンセル数</p>
+                    <p class="admin-kpi-value" id="kpi-cancelled">—</p>
+                  </article>
+                  <article class="admin-kpi-card">
+                    <p class="admin-kpi-label">空席率</p>
+                    <p class="admin-kpi-value" id="kpi-vacancy">—</p>
+                  </article>
+                </div>
+              </div>
+
+              <div class="line-admin-panel">
+                <div class="line-admin-panel-head">
+                  <div>
+                    <h2>直近の予約</h2>
+                    <p>行をクリックすると詳細画面へ移動します</p>
+                  </div>
+                  <button type="button" class="line-admin-nav-btn" data-view="list" id="dashboard-show-all">
+                    一覧を見る
+                  </button>
+                </div>
+                <div class="admin-table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>時間</th>
+                        <th>名前</th>
+                        <th>人数</th>
+                        <th>ステータス</th>
+                      </tr>
+                    </thead>
+                    <tbody id="reservation-table-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- List -->
+            <section id="admin-list-view" class="line-admin-view" hidden>
+              <div class="line-admin-panel" style="margin-top: 1rem">
+                <div class="line-admin-panel-head">
+                  <div>
+                    <h2>予約一覧</h2>
+                    <p>本日分の予約（デモデータ）</p>
+                  </div>
+                </div>
+                <div class="admin-table-wrap">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>時間</th>
+                        <th>名前</th>
+                        <th>人数</th>
+                        <th>ステータス</th>
+                      </tr>
+                    </thead>
+                    <tbody id="reservation-list-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+
+            <!-- Detail -->
+            <section id="admin-detail-view" class="line-admin-view" hidden>
+              <div class="line-admin-panel" style="margin-top: 1rem">
+                <div class="line-admin-panel-head">
+                  <div>
+                    <h2>予約詳細</h2>
+                  </div>
+                  <button type="button" class="line-admin-back-btn" id="detail-back-btn">
+                    ← 一覧に戻る
+                  </button>
+                </div>
+                <div id="reservation-detail"></div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="admin-sidebar">
+            <div class="admin-notify-card" id="new-reservation-card">
+              <h3>新しい予約</h3>
+              <p>読み込み中…</p>
+            </div>
+            <div class="admin-sidebar-links">
+              <p>デモフロー</p>
+              <a href="/line-reservation/demo">← 予約デモに戻る</a>
+              <a href="/line-reservation">製品ページへ</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner line-footer-inner">
+        <img
+          src="/logo-nexcon.svg"
+          alt=""
+          class="footer-logo"
+          width="140"
+          height="28"
+          aria-hidden="true"
+        />
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="admin-toast" class="admin-toast" hidden role="status"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/line-admin.js"></script>
+  </body>
+</html>

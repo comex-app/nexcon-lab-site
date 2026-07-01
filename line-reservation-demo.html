@@ -55,9 +55,18 @@
           <p class="eyebrow">Sales Demo</p>
           <h1>LINE 予約デモ</h1>
           <p class="line-demo-intro-lead">
-            実際の予約フローを体験できます。<br />
-            入力内容は保存されません（営業用デモ）。
+            予約入力から管理画面まで、一連のフローを体験できます。<br />
+            入力内容はブラウザ内のみ（営業用デモ）。
           </p>
+          <ol class="line-demo-steps" aria-label="デモの流れ">
+            <li class="line-demo-step is-active" data-step="1">① 予約入力</li>
+            <li class="line-demo-step" data-step="2">② 確認</li>
+            <li class="line-demo-step" data-step="3">③ 完了</li>
+            <li class="line-demo-step" data-step="4">④ LINE通知</li>
+            <li class="line-demo-step line-demo-step--admin" data-step="5">
+              <a href="/line-reservation/demo/admin">⑤ 管理画面</a>
+            </li>
+          </ol>
           <a href="/line-reservation" class="line-demo-back-link">← 製品ページに戻る</a>
         </div>
 
@@ -139,19 +148,21 @@
 
                     <p id="form-error" class="line-form-error" hidden role="alert"></p>
 
-                    <button type="submit" class="line-submit-btn">予約する</button>
+                    <button type="submit" class="line-submit-btn">確認画面へ</button>
                   </form>
 
                   <p class="line-demo-note">※ これは Nexcon Lab の営業用デモです</p>
                 </section>
 
-                <!-- 確認画面 -->
-                <section id="demo-success-view" class="line-app-view" hidden>
-                  <div class="line-success-icon" aria-hidden="true">✓</div>
-                  <h2 class="line-success-title">予約ありがとうございました</h2>
-                  <p class="line-success-lead">これは営業用デモです。</p>
+                <!-- ② 確認画面 -->
+                <section id="demo-confirm-view" class="line-app-view" hidden>
+                  <div class="line-chat-hint">
+                    <div class="line-chat-bubble">入力内容をご確認ください。</div>
+                  </div>
 
-                  <dl class="line-success-summary" id="success-summary">
+                  <h2 class="line-step-title">予約内容の確認</h2>
+
+                  <dl class="line-success-summary" id="confirm-summary">
                     <div>
                       <dt>お名前</dt>
                       <dd data-field="name">—</dd>
@@ -166,17 +177,77 @@
                     </div>
                   </dl>
 
-                  <div class="line-chat-hint line-chat-hint-success">
-                    <div class="line-chat-bubble">
-                      ご予約を承りました。確認メッセージを LINE でお送りします（デモ）。
+                  <div class="line-success-actions">
+                    <button type="button" id="confirm-submit-btn" class="line-submit-btn">
+                      この内容で予約する
+                    </button>
+                    <button type="button" id="confirm-back-btn" class="line-submit-btn line-submit-btn-secondary">
+                      入力に戻る
+                    </button>
+                  </div>
+                </section>
+
+                <!-- ③ 予約完了 -->
+                <section id="demo-complete-view" class="line-app-view" hidden>
+                  <div class="line-success-icon" aria-hidden="true">✓</div>
+                  <h2 class="line-success-title">予約が完了しました</h2>
+                  <p class="line-success-lead">ご予約ありがとうございます。</p>
+
+                  <dl class="line-success-summary" id="complete-summary">
+                    <div>
+                      <dt>お名前</dt>
+                      <dd data-field="name">—</dd>
+                    </div>
+                    <div>
+                      <dt>人数</dt>
+                      <dd data-field="guests">—</dd>
+                    </div>
+                    <div>
+                      <dt>日時</dt>
+                      <dd data-field="datetime">—</dd>
+                    </div>
+                  </dl>
+
+                  <div class="line-success-actions">
+                    <button type="button" id="complete-line-btn" class="line-submit-btn">
+                      LINE 通知を見る
+                    </button>
+                    <button type="button" id="demo-reset-btn" class="line-submit-btn line-submit-btn-secondary">
+                      もう一度試す
+                    </button>
+                  </div>
+                </section>
+
+                <!-- ④ LINE 通知 -->
+                <section id="demo-line-view" class="line-app-view" hidden>
+                  <div class="line-line-notify">
+                    <div class="line-line-notify-header">
+                      <img
+                        src="/line-reservation/logo-line.svg"
+                        alt=""
+                        width="24"
+                        height="24"
+                        aria-hidden="true"
+                      />
+                      <span>デモ店舗</span>
+                      <time>たった今</time>
+                    </div>
+                    <div class="line-line-notify-card">
+                      <p class="line-line-notify-title">ご予約ありがとうございます</p>
+                      <p>
+                        <span data-field="name">—</span> 様<br />
+                        <span data-field="datetime">—</span><br />
+                        人数: <span data-field="guests">—</span>
+                      </p>
+                      <p class="line-line-notify-foot">当日お待ちしております。</p>
                     </div>
                   </div>
 
                   <div class="line-success-actions">
-                    <button type="button" id="demo-reset-btn" class="line-submit-btn line-submit-btn-secondary">
-                      もう一度試す
+                    <button type="button" id="line-admin-link-btn" class="line-submit-btn">
+                      管理画面を見る →
                     </button>
-                    <a href="/line-reservation" class="line-text-link">製品ページへ戻る</a>
+                    <a href="/line-reservation/demo/admin" class="line-text-link">管理画面を別タブで開く</a>
                   </div>
                 </section>
               </div>

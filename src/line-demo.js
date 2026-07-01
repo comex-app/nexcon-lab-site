@@ -1,9 +1,19 @@
+import { saveDemoReservation } from "./line-demo-store.js";
+
 const form = document.getElementById("reservation-form");
 const formView = document.getElementById("demo-form-view");
-const successView = document.getElementById("demo-success-view");
+const confirmView = document.getElementById("demo-confirm-view");
+const completeView = document.getElementById("demo-complete-view");
+const lineView = document.getElementById("demo-line-view");
 const formError = document.getElementById("form-error");
 const resetBtn = document.getElementById("demo-reset-btn");
+const confirmBackBtn = document.getElementById("confirm-back-btn");
+const confirmSubmitBtn = document.getElementById("confirm-submit-btn");
+const lineNextBtn = document.getElementById("line-admin-link-btn");
 const dateInput = document.getElementById("reserve-date");
+
+const views = [formView, confirmView, completeView, lineView].filter(Boolean);
+let pendingReservation = null;
 
 function setMinDate() {
   if (!dateInput) return;
@@ -22,6 +32,10 @@ function formatDateJa(isoDate) {
   return `${y}年${m}月${d}日（${weekday}）`;
 }
 
+function guestLabel(guests) {
+  return guests === "8" ? "8 名以上" : `${guests} 名`;
+}
+
 function showError(message) {
   if (!formError) return;
   formError.textContent = message;
@@ -34,28 +48,75 @@ function clearError() {
   formError.hidden = true;
 }
 
-function showSuccess({ name, guests, date, time }) {
-  if (!successView || !formView) return;
+function showView(view) {
+  views.forEach((v) => {
+    v.hidden = v !== view;
+  });
+  updateStepIndicator(view);
+  view?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
 
-  const guestLabel = guests === "8" ? "8 名以上" : `${guests} 名`;
+function updateStepIndicator(activeView) {
+  const stepMap = {
+    [formView?.id]: 1,
+    [confirmView?.id]: 2,
+    [completeView?.id]: 3,
+    [lineView?.id]: 4,
+  };
+  const activeStep = stepMap[activeView?.id] ?? 1;
+  document.querySelectorAll(".line-demo-step").forEach((el) => {
+    const step = Number(el.dataset.step);
+    el.classList.toggle("is-active", step === activeStep);
+    el.classList.toggle("is-done", step < activeStep);
+  });
+}
 
-  successView.querySelector('[data-field="name"]').textContent = name;
-  successView.querySelector('[data-field="guests"]').textContent = guestLabel;
-  successView.querySelector('[data-field="datetime"]').textContent =
-    `${formatDateJa(date)} ${time}`;
+function fillSummary(container, { name, guests, date, time }) {
+  if (!container) return;
+  const dateLabel = formatDateJa(date);
+  container.querySelector('[data-field="name"]').textContent = name;
+  container.querySelector('[data-field="guests"]').textContent = guestLabel(guests);
+  container.querySelector('[data-field="datetime"]').textContent = `${dateLabel} ${time}`;
+}
 
-  formView.hidden = true;
-  successView.hidden = false;
-  successView.scrollIntoView({ behavior: "smooth", block: "nearest" });
+function showConfirm(data) {
+  pendingReservation = data;
+  fillSummary(confirmView, data);
+  showView(confirmView);
+}
+
+function showComplete(data) {
+  fillSummary(completeView, data);
+  saveDemoReservation({
+    name: data.name,
+    guests: data.guests,
+    date: data.date,
+    dateLabel: formatDateJa(data.date),
+    time: data.time,
+    phone: "090-0000-0000",
+    line: "（デモ）LINE連携",
+    note: "デモ予約から自動登録",
+  });
+  showView(completeView);
+}
+
+function showLineNotification(data) {
+  if (lineView) {
+    lineView.querySelector('[data-field="name"]').textContent = data.name;
+    lineView.querySelector('[data-field="datetime"]').textContent =
+      `${formatDateJa(data.date)} ${data.time}`;
+    lineView.querySelector('[data-field="guests"]').textContent = guestLabel(data.guests);
+  }
+  showView(lineView);
 }
 
 function resetDemo() {
-  if (!form || !successView || !formView) return;
+  if (!form) return;
   form.reset();
   clearError();
   setMinDate();
-  successView.hidden = true;
-  formView.hidden = false;
+  pendingReservation = null;
+  showView(formView);
   form.querySelector("#guest-name")?.focus();
 }
 
@@ -84,10 +145,30 @@ if (form) {
       return;
     }
 
-    showSuccess({ name, guests, date, time });
+    showConfirm({ name, guests, date, time });
   });
 }
+
+confirmBackBtn?.addEventListener("click", () => {
+  showView(formView);
+});
+
+confirmSubmitBtn?.addEventListener("click", () => {
+  if (!pendingReservation) return;
+  showComplete(pendingReservation);
+});
+
+completeView?.querySelector("#complete-line-btn")?.addEventListener("click", () => {
+  if (!pendingReservation) return;
+  showLineNotification(pendingReservation);
+});
 
 if (resetBtn) {
   resetBtn.addEventListener("click", resetDemo);
 }
+
+lineNextBtn?.addEventListener("click", () => {
+  window.location.href = "/line-reservation/demo/admin?id=demo-new";
+});
+
+showView(formView);
