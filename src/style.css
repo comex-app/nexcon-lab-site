@@ -97,7 +97,13 @@ a {
 
 .brand-logo {
   width: auto;
-  height: 2rem;
+  height: 2.25rem;
+}
+
+/* Dark-theme pages: navy SVG logo → white for contrast */
+body:not(.page-line-light) .brand-logo,
+body:not(.page-line-light) .footer-logo {
+  filter: brightness(0) invert(1);
 }
 
 .site-nav {
