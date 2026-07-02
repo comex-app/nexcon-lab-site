@@ -1,278 +1,370 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Nexcon Lab LINE予約システム — 営業デモ（予約フロー体験）" />
-    <meta name="robots" content="noindex" />
-    <title>予約デモ | LINE予約システム | Nexcon Lab</title>
-    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
-    <link rel="stylesheet" href="/src/style.css" />
-    <link rel="stylesheet" href="/src/line-light-theme.css" />
-    <link rel="stylesheet" href="/src/line-demo.css" />
-  </head>
-  <body class="page-line-light page-line-demo">
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="/" class="brand" aria-label="Nexcon Lab ホーム">
-          <img
-            src="/logo-nexcon.svg"
-            alt="Nexcon Lab"
-            class="brand-logo"
-            width="180"
-            height="36"
-          />
-        </a>
-        <nav class="site-nav" aria-label="メインナビゲーション">
-          <a href="/">Home</a>
-          <a href="/atlas">Atlas</a>
-          <a href="/line-reservation" class="nav-active">LINE予約</a>
-          <a href="/line-reservation#contact">Contact</a>
-        </nav>
-        <button
-          type="button"
-          class="nav-toggle"
-          aria-label="メニューを開く"
-          aria-expanded="false"
-          aria-controls="mobile-nav"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
-        <a href="/">Home</a>
-        <a href="/atlas">Atlas</a>
-        <a href="/line-reservation">LINE予約</a>
-        <a href="/line-reservation#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main class="line-demo-main">
-      <div class="container line-demo-layout">
-        <div class="line-demo-intro">
-          <p class="eyebrow">Sales Demo</p>
-          <h1>LINE 予約デモ</h1>
-          <p class="line-demo-intro-lead">
-            予約入力から管理画面まで、一連のフローを体験できます。<br />
-            入力内容はブラウザ内のみ（営業用デモ）。
-          </p>
-          <ol class="line-demo-steps" aria-label="デモの流れ">
-            <li class="line-demo-step is-active" data-step="1">① 予約入力</li>
-            <li class="line-demo-step" data-step="2">② 確認</li>
-            <li class="line-demo-step" data-step="3">③ 完了</li>
-            <li class="line-demo-step" data-step="4">④ LINE通知</li>
-            <li class="line-demo-step line-demo-step--admin" data-step="5">
-              <a href="/line-reservation/demo/admin">⑤ 管理画面</a>
-            </li>
-          </ol>
-          <a href="/line-reservation" class="line-demo-back-link">← 製品ページに戻る</a>
-        </div>
-
-        <div class="line-phone-shell" aria-label="LINE予約デモ画面">
-          <div class="line-phone-frame">
-            <div class="line-app">
-              <header class="line-app-header">
-                <a href="/line-reservation" class="line-app-back" aria-label="戻る">‹</a>
-                <div class="line-app-title">
-                  <img
-                    src="/line-reservation/logo-line.svg"
-                    alt=""
-                    width="28"
-                    height="28"
-                    aria-hidden="true"
-                  />
-                  <span>デモ店舗 予約</span>
-                </div>
-                <span class="line-app-header-spacer" aria-hidden="true"></span>
-              </header>
-
-              <div class="line-app-body">
-                <!-- 予約フォーム -->
-                <section id="demo-form-view" class="line-app-view">
-                  <div class="line-chat-hint">
-                    <div class="line-chat-bubble">ご希望の日時と人数を入力してください。</div>
-                  </div>
-
-                  <form id="reservation-form" class="line-reservation-form" novalidate>
-                    <div class="line-field">
-                      <label for="guest-name">お名前</label>
-                      <input
-                        type="text"
-                        id="guest-name"
-                        name="name"
-                        required
-                        autocomplete="name"
-                        placeholder="山田 太郎"
-                      />
-                    </div>
-
-                    <div class="line-field">
-                      <label for="guest-count">人数</label>
-                      <select id="guest-count" name="guests" required>
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="1">1 名</option>
-                        <option value="2">2 名</option>
-                        <option value="3">3 名</option>
-                        <option value="4">4 名</option>
-                        <option value="5">5 名</option>
-                        <option value="6">6 名</option>
-                        <option value="7">7 名</option>
-                        <option value="8">8 名以上</option>
-                      </select>
-                    </div>
-
-                    <div class="line-field">
-                      <label for="reserve-date">日付</label>
-                      <input type="date" id="reserve-date" name="date" required />
-                    </div>
-
-                    <div class="line-field">
-                      <label for="reserve-time">時間</label>
-                      <select id="reserve-time" name="time" required>
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="12:00">12:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                      </select>
-                    </div>
-
-                    <p id="form-error" class="line-form-error" hidden role="alert"></p>
-
-                    <button type="submit" class="line-submit-btn">確認画面へ</button>
-                  </form>
-
-                  <p class="line-demo-note">※ これは Nexcon Lab の営業用デモです</p>
-                </section>
-
-                <!-- ② 確認画面 -->
-                <section id="demo-confirm-view" class="line-app-view" hidden>
-                  <div class="line-chat-hint">
-                    <div class="line-chat-bubble">入力内容をご確認ください。</div>
-                  </div>
-
-                  <h2 class="line-step-title">予約内容の確認</h2>
-
-                  <dl class="line-success-summary" id="confirm-summary">
-                    <div>
-                      <dt>お名前</dt>
-                      <dd data-field="name">—</dd>
-                    </div>
-                    <div>
-                      <dt>人数</dt>
-                      <dd data-field="guests">—</dd>
-                    </div>
-                    <div>
-                      <dt>日時</dt>
-                      <dd data-field="datetime">—</dd>
-                    </div>
-                  </dl>
-
-                  <div class="line-success-actions">
-                    <button type="button" id="confirm-submit-btn" class="line-submit-btn">
-                      この内容で予約する
-                    </button>
-                    <button type="button" id="confirm-back-btn" class="line-submit-btn line-submit-btn-secondary">
-                      入力に戻る
-                    </button>
-                  </div>
-                </section>
-
-                <!-- ③ 予約完了 -->
-                <section id="demo-complete-view" class="line-app-view" hidden>
-                  <div class="line-success-icon" aria-hidden="true">✓</div>
-                  <h2 class="line-success-title">予約が完了しました</h2>
-                  <p class="line-success-lead">ご予約ありがとうございます。</p>
-
-                  <dl class="line-success-summary" id="complete-summary">
-                    <div>
-                      <dt>お名前</dt>
-                      <dd data-field="name">—</dd>
-                    </div>
-                    <div>
-                      <dt>人数</dt>
-                      <dd data-field="guests">—</dd>
-                    </div>
-                    <div>
-                      <dt>日時</dt>
-                      <dd data-field="datetime">—</dd>
-                    </div>
-                  </dl>
-
-                  <div class="line-success-actions">
-                    <button type="button" id="complete-line-btn" class="line-submit-btn">
-                      LINE 通知を見る
-                    </button>
-                    <button type="button" id="demo-reset-btn" class="line-submit-btn line-submit-btn-secondary">
-                      もう一度試す
-                    </button>
-                  </div>
-                </section>
-
-                <!-- ④ LINE 通知 -->
-                <section id="demo-line-view" class="line-app-view" hidden>
-                  <div class="line-line-notify">
-                    <div class="line-line-notify-header">
-                      <img
-                        src="/line-reservation/logo-line.svg"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true"
-                      />
-                      <span>デモ店舗</span>
-                      <time>たった今</time>
-                    </div>
-                    <div class="line-line-notify-card">
-                      <p class="line-line-notify-title">ご予約ありがとうございます</p>
-                      <p>
-                        <span data-field="name">—</span> 様<br />
-                        <span data-field="datetime">—</span><br />
-                        人数: <span data-field="guests">—</span>
-                      </p>
-                      <p class="line-line-notify-foot">当日お待ちしております。</p>
-                    </div>
-                  </div>
-
-                  <div class="line-success-actions">
-                    <button type="button" id="line-admin-link-btn" class="line-submit-btn">
-                      管理画面を見る →
-                    </button>
-                    <a href="/line-reservation/demo/admin" class="line-text-link">管理画面を別タブで開く</a>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer class="site-footer line-demo-footer">
-      <div class="container footer-inner">
-        <img
-          src="/logo-nexcon.svg"
-          alt=""
-          class="footer-logo"
-          width="140"
-          height="28"
-          aria-hidden="true"
-        />
-        <p class="line-demo-footer-note">Nexcon Lab — LINE予約システム 営業デモ</p>
-        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/line-demo.js"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nexcon Lab LINE予約システム — 営業デモ（予約フロー体験）" />
+    <meta name="robots" content="noindex" />
+    <title>予約デモ | LINE予約システム | Nexcon Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/line-light-theme.css" />
+    <link rel="stylesheet" href="/src/line-demo.css" />
+  </head>
+  <body class="page-line-light page-line-demo">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Nexcon Lab ホーム">
+          <img
+            src="/logo-nexcon.svg"
+            alt="Nexcon Lab"
+            class="brand-logo"
+            width="180"
+            height="36"
+          />
+        </a>
+        <nav class="site-nav" aria-label="メインナビゲーション">
+          <a href="/">Home</a>
+          <a href="/atlas">Atlas</a>
+          <a href="/line-reservation" class="nav-active">LINE予約</a>
+          <a href="/line-reservation#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
+        <a href="/">Home</a>
+        <a href="/atlas">Atlas</a>
+        <a href="/line-reservation">LINE予約</a>
+        <a href="/line-reservation#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="line-demo-main">
+      <div class="container line-demo-layout">
+        <aside class="line-demo-intro" aria-label="デモの流れ">
+          <p class="eyebrow">Sales Demo · 3分体験</p>
+          <h1>LINE 予約デモ</h1>
+          <p class="line-demo-intro-lead">
+            お客様の予約から店舗管理まで、5ステップで製品価値を体験できます。
+          </p>
+
+          <ol class="line-demo-story" aria-label="5ステップストーリー">
+            <li class="line-demo-story-item is-active" data-step="1">
+              <div class="line-demo-story-marker">
+                <span class="line-demo-story-num">1</span>
+                <span class="line-demo-story-icon" aria-hidden="true">📝</span>
+              </div>
+              <div class="line-demo-story-body">
+                <strong>予約入力</strong>
+                <p>日時・人数を入力して予約を開始</p>
+                <button type="button" class="line-demo-story-next" data-action="next-step-1">
+                  次へ →
+                </button>
+              </div>
+            </li>
+            <li class="line-demo-story-item" data-step="2">
+              <div class="line-demo-story-marker">
+                <span class="line-demo-story-num">2</span>
+                <span class="line-demo-story-icon" aria-hidden="true">✓</span>
+              </div>
+              <div class="line-demo-story-body">
+                <strong>入力確認</strong>
+                <p>内容を確認して予約を確定</p>
+                <button type="button" class="line-demo-story-next" data-action="next-step-2" hidden>
+                  次へ →
+                </button>
+              </div>
+            </li>
+            <li class="line-demo-story-item" data-step="3">
+              <div class="line-demo-story-marker">
+                <span class="line-demo-story-num">3</span>
+                <span class="line-demo-story-icon" aria-hidden="true">🎉</span>
+              </div>
+              <div class="line-demo-story-body">
+                <strong>予約完了</strong>
+                <p>予約完了画面を表示</p>
+                <button type="button" class="line-demo-story-next" data-action="next-step-3" hidden>
+                  次へ →
+                </button>
+              </div>
+            </li>
+            <li class="line-demo-story-item" data-step="4">
+              <div class="line-demo-story-marker">
+                <span class="line-demo-story-num">4</span>
+                <span class="line-demo-story-icon" aria-hidden="true">💬</span>
+              </div>
+              <div class="line-demo-story-body">
+                <strong>LINE通知</strong>
+                <p>お客様のLINEに自動通知</p>
+                <button type="button" class="line-demo-story-next" data-action="next-step-4" hidden>
+                  次へ →
+                </button>
+              </div>
+            </li>
+            <li class="line-demo-story-item" data-step="5">
+              <div class="line-demo-story-marker">
+                <span class="line-demo-story-num">5</span>
+                <span class="line-demo-story-icon" aria-hidden="true">📊</span>
+              </div>
+              <div class="line-demo-story-body">
+                <strong>管理画面</strong>
+                <p>予約をリアルタイムで一元管理</p>
+                <a
+                  href="/line-reservation/demo/admin"
+                  class="line-demo-story-next line-demo-story-next--link"
+                  data-action="next-step-5"
+                  hidden
+                >
+                  管理画面へ →
+                </a>
+              </div>
+            </li>
+          </ol>
+
+          <a href="/line-reservation" class="line-demo-back-link">← 製品ページに戻る</a>
+        </aside>
+
+        <div class="line-phone-shell" aria-label="LINE予約デモ画面">
+          <div class="line-phone-frame" id="demo-phone-frame">
+            <div class="line-app" id="line-app-shell">
+              <header class="line-app-header" id="line-app-header">
+                <a href="/line-reservation" class="line-app-back" aria-label="戻る">‹</a>
+                <div class="line-app-title">
+                  <img
+                    src="/line-reservation/logo-line.svg"
+                    alt=""
+                    width="28"
+                    height="28"
+                    aria-hidden="true"
+                  />
+                  <span>デモ店舗 予約</span>
+                </div>
+                <span class="line-app-header-spacer" aria-hidden="true"></span>
+              </header>
+
+              <div class="line-app-body">
+                <!-- ① 予約フォーム -->
+                <section id="demo-form-view" class="line-app-view">
+                  <div class="line-chat-hint">
+                    <div class="line-chat-bubble">ご希望の日時と人数を入力してください。</div>
+                  </div>
+
+                  <form id="reservation-form" class="line-reservation-form" novalidate>
+                    <div class="line-field">
+                      <label for="guest-name">お名前</label>
+                      <input
+                        type="text"
+                        id="guest-name"
+                        name="name"
+                        required
+                        autocomplete="name"
+                        placeholder="山田 太郎"
+                      />
+                    </div>
+
+                    <div class="line-field">
+                      <label for="guest-count">人数</label>
+                      <select id="guest-count" name="guests" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="1">1 名</option>
+                        <option value="2">2 名</option>
+                        <option value="3">3 名</option>
+                        <option value="4">4 名</option>
+                        <option value="5">5 名</option>
+                        <option value="6">6 名</option>
+                        <option value="7">7 名</option>
+                        <option value="8">8 名以上</option>
+                      </select>
+                    </div>
+
+                    <div class="line-field">
+                      <label for="reserve-date">日付</label>
+                      <input type="date" id="reserve-date" name="date" required />
+                    </div>
+
+                    <div class="line-field">
+                      <label for="reserve-time">時間</label>
+                      <select id="reserve-time" name="time" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                      </select>
+                    </div>
+
+                    <p id="form-error" class="line-form-error" hidden role="alert"></p>
+
+                    <button type="submit" class="line-submit-btn">次へ — 確認画面</button>
+                  </form>
+
+                  <p class="line-demo-note">※ 営業用デモ · データはブラウザ内のみ</p>
+                </section>
+
+                <!-- ② 確認画面 -->
+                <section id="demo-confirm-view" class="line-app-view" hidden>
+                  <div class="line-chat-hint">
+                    <div class="line-chat-bubble">入力内容をご確認ください。</div>
+                  </div>
+
+                  <h2 class="line-step-title">予約内容の確認</h2>
+
+                  <dl class="line-success-summary" id="confirm-summary">
+                    <div>
+                      <dt>お名前</dt>
+                      <dd data-field="name">—</dd>
+                    </div>
+                    <div>
+                      <dt>人数</dt>
+                      <dd data-field="guests">—</dd>
+                    </div>
+                    <div>
+                      <dt>日時</dt>
+                      <dd data-field="datetime">—</dd>
+                    </div>
+                  </dl>
+
+                  <div class="line-success-actions">
+                    <button type="button" id="confirm-submit-btn" class="line-submit-btn">
+                      次へ — 予約を確定
+                    </button>
+                    <button type="button" id="confirm-back-btn" class="line-submit-btn line-submit-btn-secondary">
+                      戻る
+                    </button>
+                  </div>
+                </section>
+
+                <!-- ③ 予約完了 -->
+                <section id="demo-complete-view" class="line-app-view" hidden>
+                  <div class="line-success-icon" aria-hidden="true">✓</div>
+                  <h2 class="line-success-title">予約が完了しました</h2>
+                  <p class="line-success-lead">ご予約ありがとうございます。</p>
+
+                  <dl class="line-success-summary" id="complete-summary">
+                    <div>
+                      <dt>お名前</dt>
+                      <dd data-field="name">—</dd>
+                    </div>
+                    <div>
+                      <dt>人数</dt>
+                      <dd data-field="guests">—</dd>
+                    </div>
+                    <div>
+                      <dt>日時</dt>
+                      <dd data-field="datetime">—</dd>
+                    </div>
+                  </dl>
+
+                  <div class="line-success-actions">
+                    <button type="button" id="complete-line-btn" class="line-submit-btn">
+                      次へ — LINE通知を見る
+                    </button>
+                    <button type="button" id="demo-reset-btn" class="line-submit-btn line-submit-btn-secondary">
+                      最初から
+                    </button>
+                  </div>
+                </section>
+
+                <!-- ④ LINE トーク画面 -->
+                <section id="demo-line-view" class="line-app-view line-talk-view" hidden>
+                  <div class="line-talk">
+                    <header class="line-talk-header">
+                      <button type="button" class="line-talk-back" aria-label="戻る">‹</button>
+                      <div class="line-talk-profile">
+                        <span class="line-talk-avatar" aria-hidden="true">
+                          <img src="/line-reservation/logo-line.svg" alt="" width="36" height="36" />
+                        </span>
+                        <div>
+                          <strong>デモ店舗</strong>
+                          <span>公式アカウント</span>
+                        </div>
+                      </div>
+                      <span class="line-talk-menu" aria-hidden="true">⋮</span>
+                    </header>
+
+                    <div class="line-talk-body">
+                      <p class="line-talk-date">今日</p>
+
+                      <div class="line-talk-row line-talk-row--in">
+                        <span class="line-talk-avatar line-talk-avatar--sm" aria-hidden="true">
+                          <img src="/line-reservation/logo-line.svg" alt="" width="28" height="28" />
+                        </span>
+                        <div class="line-talk-bubble">
+                          <p class="line-talk-lead">ご予約ありがとうございます</p>
+                          <p class="line-talk-greeting"><span data-field="name">—</span> 様</p>
+                          <dl class="line-talk-details">
+                            <div>
+                              <dt>日時</dt>
+                              <dd data-field="datetime">—</dd>
+                            </div>
+                            <div>
+                              <dt>人数</dt>
+                              <dd data-field="guests">—</dd>
+                            </div>
+                            <div>
+                              <dt>店舗</dt>
+                              <dd data-field="store">デモ店舗（表参道）</dd>
+                            </div>
+                          </dl>
+                          <p class="line-talk-foot">当日お待ちしております。</p>
+                          <button type="button" class="line-talk-action-btn">変更はこちら</button>
+                        </div>
+                        <time class="line-talk-time">18:01</time>
+                      </div>
+                    </div>
+
+                    <footer class="line-talk-input-bar" aria-hidden="true">
+                      <span class="line-talk-input-placeholder">メッセージを入力</span>
+                    </footer>
+                  </div>
+
+                  <div class="line-success-actions line-success-actions--talk">
+                    <button type="button" id="line-admin-link-btn" class="line-submit-btn">
+                      次へ — 管理画面を見る
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer line-demo-footer">
+      <div class="container footer-inner">
+        <img
+          src="/logo-nexcon.svg"
+          alt=""
+          class="footer-logo"
+          width="140"
+          height="28"
+          aria-hidden="true"
+        />
+        <p class="line-demo-footer-note">Nexcon Lab — LINE予約システム 営業デモ</p>
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/line-demo.js"></script>
+  </body>
+</html>
+

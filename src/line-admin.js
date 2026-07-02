@@ -6,7 +6,7 @@ const DEMO_RESERVATIONS = [
     time: "11:00",
     name: "佐藤 花子",
     guests: 2,
-    status: "confirmed",
+    status: "visited",
     phone: "090-1234-5678",
     line: "@hanako.s",
     note: "窓際席希望",
@@ -61,6 +61,7 @@ const DEMO_RESERVATIONS = [
 const STATUS_LABEL = {
   confirmed: "確定",
   pending: "来店待ち",
+  visited: "来店済み",
   cancelled: "キャンセル",
 };
 
@@ -72,9 +73,11 @@ const dashboardView = document.getElementById("admin-dashboard-view");
 const listView = document.getElementById("admin-list-view");
 const detailView = document.getElementById("admin-detail-view");
 const kpiToday = document.getElementById("kpi-today-count");
-const kpiGuests = document.getElementById("kpi-guest-count");
+const kpiNew = document.getElementById("kpi-new-count");
+const kpiVisited = document.getElementById("kpi-visited-count");
 const kpiCancelled = document.getElementById("kpi-cancelled");
-const kpiVacancy = document.getElementById("kpi-vacancy");
+const kpiRevenue = document.getElementById("kpi-revenue");
+const kpiLineRate = document.getElementById("kpi-line-rate");
 const reservationTableBody = document.getElementById("reservation-table-body");
 const reservationListBody = document.getElementById("reservation-list-body");
 const detailContainer = document.getElementById("reservation-detail");
@@ -106,17 +109,26 @@ function mergeDemoReservation() {
   reservations.sort((a, b) => a.time.localeCompare(b.time));
 }
 
+function formatYen(amount) {
+  return `¥${amount.toLocaleString("ja-JP")}`;
+}
+
 function computeKpis() {
   const active = reservations.filter((r) => r.status !== "cancelled");
   const cancelled = reservations.filter((r) => r.status === "cancelled");
+  const visited = reservations.filter((r) => r.status === "visited");
+  const newCount = reservations.filter((r) => r.isNew || r.status === "pending").length;
   const guestTotal = active.reduce((sum, r) => sum + r.guests, 0);
-  const capacity = 40;
-  const vacancy = Math.max(0, Math.round((1 - guestTotal / capacity) * 100));
+  const avgSpend = 3500;
+  const revenue = guestTotal * avgSpend;
+  const lineRate = 87;
 
   if (kpiToday) kpiToday.textContent = String(active.length);
-  if (kpiGuests) kpiGuests.textContent = String(guestTotal);
+  if (kpiNew) kpiNew.textContent = String(newCount);
+  if (kpiVisited) kpiVisited.textContent = String(visited.length);
   if (kpiCancelled) kpiCancelled.textContent = String(cancelled.length);
-  if (kpiVacancy) kpiVacancy.innerHTML = `${vacancy}<small>%</small>`;
+  if (kpiRevenue) kpiRevenue.innerHTML = `${formatYen(revenue)}<small>見込</small>`;
+  if (kpiLineRate) kpiLineRate.innerHTML = `${lineRate}<small>%</small>`;
 }
 
 function renderNotifyCard() {

@@ -175,8 +175,36 @@
   background: var(--light-success-bg);
 }
 
-.admin-kpi-card--accent .admin-kpi-value {
+.admin-kpi-grid--sales {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.admin-kpi-card--new {
+  border-color: rgba(6, 199, 85, 0.35);
+  background: linear-gradient(160deg, var(--light-success-bg) 0%, var(--light-card) 100%);
+}
+
+.admin-kpi-card--new .admin-kpi-value {
   color: #047857;
+}
+
+.admin-kpi-card--warn .admin-kpi-value {
+  color: var(--light-warning);
+}
+
+.admin-kpi-card--revenue .admin-kpi-value {
+  color: var(--light-text);
+  font-size: 1.375rem;
+}
+
+.admin-kpi-card--line .admin-kpi-value {
+  color: var(--line-green);
+}
+
+.admin-status--visited {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
 }
 
 /* Table */
@@ -461,7 +489,8 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .admin-kpi-grid {
+  .admin-kpi-grid,
+  .admin-kpi-grid--sales {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -476,7 +505,8 @@
 }
 
 @media (max-width: 640px) {
-  .admin-kpi-grid {
+  .admin-kpi-grid,
+  .admin-kpi-grid--sales {
     grid-template-columns: 1fr;
   }
 
