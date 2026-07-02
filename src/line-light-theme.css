@@ -1,0 +1,136 @@
+/* LINE Reservation Demo — shared light theme shell (Square / Notion style) */
+
+.page-line-light {
+  --light-bg: #fafafa;
+  --light-card: #ffffff;
+  --light-border: #e5e7eb;
+  --light-text: #111827;
+  --light-text-muted: #6b7280;
+  --light-text-subtle: #9ca3af;
+  --light-success: #059669;
+  --light-success-bg: #ecfdf5;
+  --light-success-border: #a7f3d0;
+  --light-warning: #d97706;
+  --light-warning-bg: #fffbeb;
+  --light-warning-border: #fcd34d;
+  --light-error: #dc2626;
+  --light-error-bg: #fef2f2;
+  --light-error-border: #fecaca;
+  --light-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --light-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.05);
+  --light-shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(0, 0, 0, 0.08);
+  --light-radius: 12px;
+  --light-radius-lg: 16px;
+
+  color: var(--light-text);
+  background: var(--light-bg);
+}
+
+.page-line-light .site-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.page-line-light .site-nav a {
+  color: var(--light-text-muted);
+}
+
+.page-line-light .site-nav a:hover,
+.page-line-light .site-nav a:focus-visible {
+  color: var(--light-text);
+}
+
+.page-line-light .site-nav a.nav-active {
+  color: var(--light-text);
+  font-weight: 600;
+}
+
+.page-line-light .nav-toggle {
+  border-color: var(--light-border);
+}
+
+.page-line-light .nav-toggle span {
+  background: var(--light-text);
+}
+
+.page-line-light .mobile-nav {
+  background: var(--light-card);
+  border-bottom: 1px solid var(--light-border);
+}
+
+.page-line-light .mobile-nav a {
+  color: var(--light-text-muted);
+  border-bottom-color: var(--light-border);
+}
+
+.page-line-light .mobile-nav a:hover {
+  color: var(--light-text);
+}
+
+.page-line-light .site-footer {
+  background: var(--light-card);
+  border-top: 1px solid var(--light-border);
+}
+
+.page-line-light .site-footer p,
+.page-line-light .footer-copy {
+  color: var(--light-text-muted);
+}
+
+.page-line-light .eyebrow {
+  color: var(--line-green);
+  letter-spacing: 0.1em;
+}
+
+.page-line-light h1,
+.page-line-light h2,
+.page-line-light h3 {
+  color: var(--light-text);
+}
+
+/* Reusable light card */
+.light-card {
+  padding: 1.75rem;
+  border-radius: var(--light-radius-lg);
+  border: 1px solid var(--light-border);
+  background: var(--light-card);
+  box-shadow: var(--light-shadow-sm);
+}
+
+.light-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--line-green);
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.light-btn:hover {
+  background: #05b34c;
+}
+
+.light-btn:active {
+  transform: scale(0.98);
+}
+
+.light-btn--secondary {
+  background: var(--light-card);
+  color: var(--light-text);
+  border: 1px solid var(--light-border);
+  box-shadow: var(--light-shadow-sm);
+}
+
+.light-btn--secondary:hover {
+  background: var(--light-bg);
+  border-color: #d1d5db;
+}

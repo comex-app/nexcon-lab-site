@@ -1,8 +1,33 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 
+const devRewrites = {
+  "/atlas": "/atlas.html",
+  "/line-reservation": "/line-reservation.html",
+  "/line-reservation/demo": "/line-reservation-demo.html",
+  "/line-reservation/demo/admin": "/line-reservation-demo-admin.html",
+};
+
+function cleanUrlPlugin() {
+  return {
+    name: "clean-url-rewrites",
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        const pathOnly = req.url?.split("?")[0] ?? "";
+        const query = req.url?.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+        const target = devRewrites[pathOnly];
+        if (target) {
+          req.url = target + query;
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
   base: "/",
+  plugins: [cleanUrlPlugin()],
   build: {
     rollupOptions: {
       input: {
