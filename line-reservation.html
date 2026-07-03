@@ -88,12 +88,9 @@
               自動通知、<br class="hide-mobile" />
               管理画面による一元管理まで。
             </p>
-            <div class="hero-actions line-hero-actions">
-              <a href="/line-reservation/demo" class="btn btn-primary">デモを見る</a>
-              <a
-                href="mailto:hello@nexcon-lab.com?subject=LINE%E4%BA%88%E7%B4%84%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
-                class="btn btn-secondary"
-              >お問い合わせ</a>
+            <div class="hero-actions line-hero-actions line-hero-actions--demo">
+              <a href="/line-reservation/demo" class="line-hero-cta line-hero-cta--primary">予約デモを試す</a>
+              <a href="/line-reservation/demo/admin" class="line-hero-cta line-hero-cta--secondary">管理画面を見る</a>
             </div>
             <span class="product-badge line-badge">Available</span>
           </div>
@@ -250,6 +247,33 @@
         </div>
       </section>
 
+      <!-- 体験セクション -->
+      <section id="experience" class="line-experience section">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Try It</p>
+            <h2>実際に体験してください</h2>
+            <p class="section-lead section-lead--center">
+              お客様の予約フローと、店舗側の管理画面をブラウザでそのままお試しいただけます。
+            </p>
+          </div>
+          <div class="line-experience-grid">
+            <a href="/line-reservation/demo" class="line-experience-card">
+              <span class="line-experience-icon" aria-hidden="true">💬</span>
+              <h3>予約デモ</h3>
+              <p>LINE 風 UI で予約入力から完了まで体験。データは保存されません。</p>
+              <span class="line-experience-link">デモを開く →</span>
+            </a>
+            <a href="/line-reservation/demo/admin" class="line-experience-card line-experience-card--admin">
+              <span class="line-experience-icon" aria-hidden="true">📊</span>
+              <h3>管理画面デモ</h3>
+              <p>予約一覧・KPI・詳細確認。店舗スタッフ向けダッシュボードをご覧ください。</p>
+              <span class="line-experience-link">管理画面を見る →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- 導入メリット -->
       <section id="benefits" class="line-benefits section">
         <div class="container">
@@ -280,17 +304,22 @@
       <!-- デモ -->
       <section id="demo" class="line-demo section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head section-head--center">
             <p class="eyebrow">Demo</p>
-            <h2>デモ</h2>
-            <p class="section-lead">
-              ブラウザ上で予約フローを体験できます。データは保存されません。
+            <h2>デモ環境</h2>
+            <p class="section-lead section-lead--center">
+              上記の体験セクションから、予約デモ・管理画面デモへお進みください。
             </p>
           </div>
-          <div class="demo-launch-card">
-            <h3>LINE 予約デモを試す</h3>
-            <p>人数・日時・お名前を入力し、予約完了画面までお試しください。</p>
-            <a href="/line-reservation/demo" class="btn btn-primary">デモを見る</a>
+          <div class="line-experience-grid line-experience-grid--compact">
+            <a href="/line-reservation/demo" class="line-experience-card line-experience-card--compact">
+              <h3>予約デモ</h3>
+              <span class="line-experience-link">開く →</span>
+            </a>
+            <a href="/line-reservation/demo/admin" class="line-experience-card line-experience-card--compact line-experience-card--admin">
+              <h3>管理画面デモ</h3>
+              <span class="line-experience-link">開く →</span>
+            </a>
           </div>
         </div>
       </section>
@@ -377,11 +406,8 @@
           <h2>まずはデモをご覧ください</h2>
           <p class="line-cta-final-lead">お気軽にお問い合わせください</p>
           <div class="line-cta-actions">
-            <a href="/line-reservation/demo" class="line-cta-btn line-cta-btn--primary">デモを見る</a>
-            <a
-              href="mailto:hello@nexcon-lab.com?subject=LINE%E4%BA%88%E7%B4%84%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B"
-              class="line-cta-btn line-cta-btn--secondary"
-            >お問い合わせ</a>
+            <a href="/line-reservation/demo" class="line-cta-btn line-cta-btn--primary">予約デモを試す</a>
+            <a href="/line-reservation/demo/admin" class="line-cta-btn line-cta-btn--secondary">管理画面を見る</a>
           </div>
         </div>
       </section>
@@ -437,6 +463,8 @@
         <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
       </div>
     </footer>
+
+    <a href="/line-reservation/demo" class="line-fab-demo">デモを試す</a>
 
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/line-lp.js"></script>
