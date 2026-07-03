@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nexcon Lab — 中小企業の業務 DX と IT 基盤を支えるプロダクト開発。"
+      content="Nexcon One — Atlas・LINE予約・NexAssistant を統合する、中小企業向け DX プラットフォーム。"
     />
-    <title>Nexcon Lab</title>
+    <title>Nexcon Lab | Nexcon One Platform</title>
     <link rel="icon" type="image/svg+xml" href="/logo-nexcon.svg" />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
@@ -24,10 +24,9 @@
           />
         </a>
         <nav class="site-nav" aria-label="メインナビゲーション">
-          <a href="#products">Products</a>
-          <a href="/atlas">Atlas</a>
-          <a href="/line-reservation">LINE予約</a>
-          <a href="/assistant">NexAssistant</a>
+          <a href="#platform">Platform</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#ecosystem">Ecosystem</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -44,10 +43,9 @@
         </button>
       </div>
       <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
-        <a href="#products">Products</a>
-        <a href="/atlas">Atlas</a>
-        <a href="/line-reservation">LINE予約</a>
-        <a href="/assistant">NexAssistant</a>
+        <a href="#platform">Platform</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#ecosystem">Ecosystem</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -56,85 +54,155 @@
     <main>
       <section id="hero" class="hero section">
         <div class="container hero-inner">
-          <p class="eyebrow">Business DX &amp; IT Infrastructure</p>
-          <h1>
-            現場の業務を、<br class="hide-mobile" />
-            テクノロジーで支える。
-          </h1>
+          <p class="eyebrow">Nexcon One Platform</p>
+          <h1>Nexcon One</h1>
+          <p class="hero-subtitle">中小企業のDXを、一つのプラットフォームへ。</p>
           <p class="hero-lead">
-            Nexcon Lab は、中小企業向けに PC 健康管理から予約・顧客接点まで、
-            使いやすいプロダクトを開発しています。
+            Atlas、LINE予約、NexAssistant — 独立した製品ではなく、
+            ひとつの基盤でつながるサービス群です。
           </p>
           <div class="hero-actions">
-            <a href="#products" class="btn btn-primary">Products を見る</a>
+            <a href="#platform" class="btn btn-primary">Platform を見る</a>
             <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
           </div>
         </div>
         <div class="hero-glow" aria-hidden="true"></div>
       </section>
 
-      <section id="products" class="products section">
+      <section id="platform" class="platform section">
         <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Products</p>
-            <h2>プロダクト</h2>
-            <p class="section-lead">
-              社内 IT の安定と、対外の顧客接点。それぞれの課題に向き合う製品を提供します。
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Platform</p>
+            <h2>Nexcon One</h2>
+            <p class="section-lead section-lead--center">
+              IT 管理、予約・顧客接点、AI 業務支援 — すべてが一つのプラットフォームで連携します。
             </p>
           </div>
-          <div class="product-grid">
-            <article class="product-card">
-              <div class="product-icon" aria-hidden="true">A</div>
-              <h3>Atlas Health Platform</h3>
-              <p class="product-tagline">PC 健康監視・診断・安全修復</p>
-              <p>
-                IT 担当がいなくても、PC の健康状態を見える化し、容量不足や Outlook
-                障害の予兆を早期に発見。安全な修復フローまで一気通貫で支援します。
-              </p>
-              <ul class="product-features">
-                <li>PC健康スコア &amp; ダッシュボード</li>
-                <li>Telemetry による継続監視</li>
-                <li>Guardrails 付き安全修復</li>
-              </ul>
-              <a href="/atlas" class="btn btn-primary product-link">詳しく見る</a>
-              <span class="product-badge">Pilot Edition</span>
-            </article>
 
-            <article class="product-card">
-              <div class="product-icon product-icon-line" aria-hidden="true">L</div>
-              <h3>LINE予約システム</h3>
-              <p class="product-tagline">予約・顧客接点の DX</p>
-              <p>
-                店舗・クリニック・サービス業向けに、LINE を活用した予約体験を提供。
-                受付業務の効率化と、顧客との接点強化を支援します。
-              </p>
-              <ul class="product-features">
-                <li>LINE 連携予約フロー</li>
-                <li>店舗向け管理画面</li>
-                <li>リマインド・顧客管理</li>
-              </ul>
-              <div class="product-actions">
-                <a href="/line-reservation" class="btn btn-primary product-link">詳しく見る</a>
-                <a href="/line-reservation/demo" class="btn btn-secondary product-link product-link-demo">デモを試す</a>
+          <div class="platform-diagram" aria-label="Nexcon One プラットフォーム構成図">
+            <div class="platform-diagram-top">
+              <a href="/assistant" class="platform-node platform-node--assistant">NexAssistant</a>
+            </div>
+            <div class="platform-diagram-vline" aria-hidden="true"></div>
+            <div class="platform-diagram-middle">
+              <a href="/atlas" class="platform-node platform-node--atlas">Atlas</a>
+              <div class="platform-diagram-hline platform-diagram-hline--left" aria-hidden="true"></div>
+              <div class="platform-core">
+                <span class="platform-core-label">Nexcon One</span>
               </div>
-              <span class="product-badge product-badge-line">Available</span>
+              <div class="platform-diagram-hline platform-diagram-hline--right" aria-hidden="true"></div>
+              <a href="/line-reservation" class="platform-node platform-node--line">LINE予約</a>
+            </div>
+            <div class="platform-diagram-vline" aria-hidden="true"></div>
+            <div class="platform-diagram-bottom">
+              <span class="platform-node platform-node--soon">Coming Soon...</span>
+            </div>
+          </div>
+
+          <div class="platform-services">
+            <article class="platform-service platform-service--atlas">
+              <div class="platform-service-icon" aria-hidden="true">A</div>
+              <h3>Atlas</h3>
+              <p class="platform-service-tagline">企業IT管理</p>
+              <p class="platform-service-desc">PC 健康監視・診断・安全修復で、社内 IT を安定運用。</p>
+              <a href="/atlas" class="platform-service-link">詳しく見る →</a>
             </article>
 
-            <article class="product-card">
-              <div class="product-icon product-icon-assistant" aria-hidden="true">N</div>
+            <article class="platform-service platform-service--line">
+              <div class="platform-service-icon" aria-hidden="true">L</div>
+              <h3>LINE予約</h3>
+              <p class="platform-service-tagline">予約・顧客管理</p>
+              <p class="platform-service-desc">LINE 連携で予約受付から顧客接点までを DX 化。</p>
+              <a href="/line-reservation" class="platform-service-link">詳しく見る →</a>
+            </article>
+
+            <article class="platform-service platform-service--assistant">
+              <div class="platform-service-icon" aria-hidden="true">N</div>
               <h3>NexAssistant</h3>
-              <p class="product-tagline">会社専属 AI 秘書</p>
-              <p>
-                Atlas、LINE予約、今後の業務システムを統合。ChatGPT ではなく、
-                あなたの会社の業務を理解した AI アシスタントです。
-              </p>
-              <ul class="product-features">
-                <li>本日の業務サマリー</li>
-                <li>プロダクト横断クイックアクション</li>
-                <li>中小企業向け業務支援</li>
-              </ul>
-              <a href="/assistant" class="btn btn-secondary product-link">詳しく見る</a>
-              <span class="product-badge product-badge-assistant">Coming Soon</span>
+              <p class="platform-service-tagline">AI業務アシスタント</p>
+              <p class="platform-service-desc">会社専属 AI が業務を横断し、日々の判断を支援。</p>
+              <a href="/assistant" class="platform-service-link">詳しく見る →</a>
+            </article>
+
+            <article class="platform-service platform-service--soon">
+              <div class="platform-service-icon" aria-hidden="true">+</div>
+              <h3>Coming Soon</h3>
+              <p class="platform-service-tagline">今後追加予定</p>
+              <p class="platform-service-desc">Workflow、Document AI など、エコシステムを拡張中。</p>
+              <span class="platform-service-soon">近日公開</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing section">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Pricing Preview</p>
+            <h2>料金プラン</h2>
+            <p class="section-lead section-lead--center">
+              組織規模に合わせた柔軟なプランを準備中です。
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-tier">
+              <h3>Starter</h3>
+              <p class="pricing-tier-desc">小規模チーム向け</p>
+            </div>
+            <div class="pricing-tier pricing-tier--featured">
+              <h3>Business</h3>
+              <p class="pricing-tier-desc">成長中の企業向け</p>
+            </div>
+            <div class="pricing-tier">
+              <h3>Professional</h3>
+              <p class="pricing-tier-desc">部門横断運用向け</p>
+            </div>
+            <div class="pricing-tier">
+              <h3>Enterprise</h3>
+              <p class="pricing-tier-desc">大規模・カスタム向け</p>
+            </div>
+          </div>
+          <p class="pricing-note">詳細は近日公開</p>
+        </div>
+      </section>
+
+      <section id="ecosystem" class="ecosystem section">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Future Vision</p>
+            <h2>Nexcon One Ecosystem</h2>
+            <p class="section-lead section-lead--center">将来追加予定のサービス群</p>
+          </div>
+          <div class="ecosystem-grid">
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">⚡</span>
+              <h3>Workflow</h3>
+              <p>業務フロー自動化</p>
+            </article>
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">📄</span>
+              <h3>Document AI</h3>
+              <p>書類の読み取り・整理</p>
+            </article>
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">📊</span>
+              <h3>Analytics</h3>
+              <p>経営ダッシュボード</p>
+            </article>
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">📦</span>
+              <h3>Inventory</h3>
+              <p>在庫・資産管理</p>
+            </article>
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">🕐</span>
+              <h3>Attendance</h3>
+              <p>勤怠・シフト管理</p>
+            </article>
+            <article class="ecosystem-card">
+              <span class="ecosystem-card-icon" aria-hidden="true">🌐</span>
+              <h3>Customer Portal</h3>
+              <p>顧客向けポータル</p>
             </article>
           </div>
         </div>
@@ -149,11 +217,11 @@
           <div class="about-content">
             <p>
               Nexcon Lab は、中小企業が抱える「IT 力不足」と「業務デジタル化」のギャップを
-              埋めるプロダクトを開発するチームです。
+              埋める <strong>Nexcon One</strong> プラットフォームを開発するチームです。
             </p>
             <p>
-              専門用語を排し、総務・事務・経営層がそのまま使える UI と、
-              現場で回る運用設計を大切にしています。
+              独立した製品を束ねるのではなく、一つの基盤で IT 管理・顧客接点・AI 支援を
+              シームレスにつなぐことを目指しています。
             </p>
             <dl class="about-facts">
               <div>
@@ -161,8 +229,8 @@
                 <dd>IT が弱い組織でも、テクノロジーの恩恵を受けられる世界をつくる</dd>
               </div>
               <div>
-                <dt>フォーカス</dt>
-                <dd>PC 基盤の予防保守 / 予約・顧客接点 DX</dd>
+                <dt>プラットフォーム</dt>
+                <dd>Nexcon One — Atlas / LINE予約 / NexAssistant</dd>
               </div>
               <div>
                 <dt>拠点</dt>
@@ -179,7 +247,7 @@
             <p class="eyebrow">Contact</p>
             <h2>お問い合わせ</h2>
             <p class="section-lead">
-              製品の導入、パートナーシップ、メディア取材など、お気軽にご連絡ください。
+              Nexcon One の導入、パートナーシップ、メディア取材など、お気軽にご連絡ください。
             </p>
           </div>
           <div class="contact-card">
