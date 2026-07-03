@@ -369,6 +369,17 @@ a.platform-node--assistant:hover {
   color: var(--white-muted);
 }
 
+.pricing-note-link {
+  color: var(--blue-400);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pricing-note-link:hover {
+  color: var(--white);
+}
+
 /* Ecosystem */
 .ecosystem {
   background: var(--navy-900);
