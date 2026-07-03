@@ -73,11 +73,11 @@ const dashboardView = document.getElementById("admin-dashboard-view");
 const listView = document.getElementById("admin-list-view");
 const detailView = document.getElementById("admin-detail-view");
 const kpiToday = document.getElementById("kpi-today-count");
-const kpiNew = document.getElementById("kpi-new-count");
-const kpiVisited = document.getElementById("kpi-visited-count");
-const kpiCancelled = document.getElementById("kpi-cancelled");
-const kpiRevenue = document.getElementById("kpi-revenue");
-const kpiLineRate = document.getElementById("kpi-line-rate");
+const kpiMonth = document.getElementById("kpi-month-count");
+const kpiCancelRate = document.getElementById("kpi-cancel-rate");
+const kpiRepeatRate = document.getElementById("kpi-repeat-rate");
+const kpiLineUsers = document.getElementById("kpi-line-users");
+const kpiPendingInquiries = document.getElementById("kpi-pending-inquiries");
 const reservationTableBody = document.getElementById("reservation-table-body");
 const reservationListBody = document.getElementById("reservation-list-body");
 const detailContainer = document.getElementById("reservation-detail");
@@ -109,26 +109,18 @@ function mergeDemoReservation() {
   reservations.sort((a, b) => a.time.localeCompare(b.time));
 }
 
-function formatYen(amount) {
-  return `¥${amount.toLocaleString("ja-JP")}`;
-}
-
 function computeKpis() {
   const active = reservations.filter((r) => r.status !== "cancelled");
   const cancelled = reservations.filter((r) => r.status === "cancelled");
-  const visited = reservations.filter((r) => r.status === "visited");
-  const newCount = reservations.filter((r) => r.isNew || r.status === "pending").length;
-  const guestTotal = active.reduce((sum, r) => sum + r.guests, 0);
-  const avgSpend = 3500;
-  const revenue = guestTotal * avgSpend;
-  const lineRate = 87;
+  const total = reservations.length;
+  const cancelRate = total > 0 ? Math.round((cancelled.length / total) * 100) : 0;
 
   if (kpiToday) kpiToday.textContent = String(active.length);
-  if (kpiNew) kpiNew.textContent = String(newCount);
-  if (kpiVisited) kpiVisited.textContent = String(visited.length);
-  if (kpiCancelled) kpiCancelled.textContent = String(cancelled.length);
-  if (kpiRevenue) kpiRevenue.innerHTML = `${formatYen(revenue)}<small>見込</small>`;
-  if (kpiLineRate) kpiLineRate.innerHTML = `${lineRate}<small>%</small>`;
+  if (kpiMonth) kpiMonth.textContent = "248";
+  if (kpiCancelRate) kpiCancelRate.innerHTML = `${cancelRate}<small>%</small>`;
+  if (kpiRepeatRate) kpiRepeatRate.innerHTML = `62<small>%</small>`;
+  if (kpiLineUsers) kpiLineUsers.textContent = "1,842";
+  if (kpiPendingInquiries) kpiPendingInquiries.textContent = "3";
 }
 
 function renderNotifyCard() {

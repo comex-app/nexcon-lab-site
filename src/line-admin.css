@@ -201,6 +201,19 @@
   color: var(--line-green);
 }
 
+.admin-kpi-card--alert {
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.admin-kpi-card--alert .admin-kpi-value {
+  color: #dc2626;
+}
+
+.admin-kpi-grid--exec .admin-kpi-value {
+  font-size: 1.625rem;
+}
+
 .admin-status--visited {
   background: #eff6ff;
   color: #2563eb;

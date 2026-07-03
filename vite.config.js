@@ -8,19 +8,26 @@ const devRewrites = {
   "/line-reservation/demo/admin": "/line-reservation-demo-admin.html",
 };
 
+function rewriteMiddleware() {
+  return (req, _res, next) => {
+    const pathOnly = req.url?.split("?")[0] ?? "";
+    const query = req.url?.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+    const target = devRewrites[pathOnly];
+    if (target) {
+      req.url = target + query;
+    }
+    next();
+  };
+}
+
 function cleanUrlPlugin() {
   return {
     name: "clean-url-rewrites",
     configureServer(server) {
-      server.middlewares.use((req, _res, next) => {
-        const pathOnly = req.url?.split("?")[0] ?? "";
-        const query = req.url?.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
-        const target = devRewrites[pathOnly];
-        if (target) {
-          req.url = target + query;
-        }
-        next();
-      });
+      server.middlewares.use(rewriteMiddleware());
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(rewriteMiddleware());
     },
   };
 }

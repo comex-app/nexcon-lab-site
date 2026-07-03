@@ -68,7 +68,25 @@ await capture("04-demo-line-notify-desktop.png", async (page) => {
 
 await capture("05-admin-dashboard-desktop.png", async (page) => {
   await page.goto(`${base}/line-reservation/demo/admin`, { waitUntil: "networkidle" });
-  await page.waitForSelector("#kpi-today-count");
+  await page.waitForSelector("#kpi-month-count");
+});
+
+await capture("09-line-reservation-lp-before-after.png", async (page) => {
+  await page.goto(`${base}/line-reservation`, { waitUntil: "networkidle" });
+  await page.locator("#transformation").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(400);
+});
+
+await capture("10-line-reservation-lp-onboarding.png", async (page) => {
+  await page.goto(`${base}/line-reservation`, { waitUntil: "networkidle" });
+  await page.locator("#onboarding").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(400);
+});
+
+await capture("11-line-reservation-lp-cta.png", async (page) => {
+  await page.goto(`${base}/line-reservation`, { waitUntil: "networkidle" });
+  await page.locator("#cta").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(400);
 });
 
 await capture("06-admin-detail-desktop.png", async (page) => {
