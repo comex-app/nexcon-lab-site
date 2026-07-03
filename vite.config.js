@@ -3,6 +3,7 @@ import { resolve } from "path";
 
 const devRewrites = {
   "/atlas": "/atlas.html",
+  "/assistant": "/assistant.html",
   "/line-reservation": "/line-reservation.html",
   "/line-reservation/demo": "/line-reservation-demo.html",
   "/line-reservation/demo/admin": "/line-reservation-demo-admin.html",
@@ -43,6 +44,7 @@ export default defineConfig({
         lineReservation: resolve(__dirname, "line-reservation.html"),
         lineReservationDemo: resolve(__dirname, "line-reservation-demo.html"),
         lineReservationDemoAdmin: resolve(__dirname, "line-reservation-demo-admin.html"),
+        assistant: resolve(__dirname, "assistant.html"),
       },
     },
   },

@@ -252,7 +252,7 @@ body:not(.page-line-light) .footer-logo {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
@@ -283,6 +283,11 @@ body:not(.page-line-light) .footer-logo {
 .product-icon-line {
   background: rgba(6, 199, 85, 0.15);
   color: var(--line-green);
+}
+
+.product-icon-assistant {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--blue-400);
 }
 
 .product-card h3 {
@@ -357,6 +362,11 @@ body:not(.page-line-light) .footer-logo {
 .product-badge-line {
   background: rgba(6, 199, 85, 0.15);
   color: var(--line-green);
+}
+
+.product-badge-assistant {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--blue-400);
 }
 
 /* About */

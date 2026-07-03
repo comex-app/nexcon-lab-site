@@ -103,5 +103,26 @@ await capture("08-admin-dashboard-mobile.png", async (page) => {
   await page.goto(`${base}/line-reservation/demo/admin`, { waitUntil: "networkidle" });
 }, { width: 390, height: 844 });
 
+const assistantOutDir = path.join(__dirname, "..", "public", "assistant", "screenshots");
+await mkdir(assistantOutDir, { recursive: true });
+
+async function captureAssistant(name, fn, viewport = { width: 1280, height: 800 }) {
+  const page = await browser.newPage({ viewport });
+  await fn(page);
+  const file = path.join(assistantOutDir, name);
+  await page.screenshot({ path: file, type: "png", fullPage: true });
+  console.log("Saved", name, statSync(file).size);
+  await page.close();
+}
+
+await captureAssistant("01-assistant-desktop.png", async (page) => {
+  await page.goto(`${base}/assistant`, { waitUntil: "networkidle" });
+  await page.waitForSelector(".assistant-ai-card");
+});
+
+await captureAssistant("02-assistant-mobile.png", async (page) => {
+  await page.goto(`${base}/assistant`, { waitUntil: "networkidle" });
+}, { width: 390, height: 844 });
+
 await browser.close();
-console.log("Done:", outDir);
+console.log("Done:", outDir, assistantOutDir);
