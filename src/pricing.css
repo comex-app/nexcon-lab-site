@@ -72,7 +72,7 @@
 
 .pricing-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   align-items: stretch;
 }
@@ -126,61 +126,87 @@
 
 .pricing-card-name {
   margin: 0 0 0.5rem;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .pricing-card-audience {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   font-size: 0.8125rem;
   line-height: 1.55;
   color: var(--pr-text-muted);
-  min-height: 2.5rem;
+  min-height: auto;
 }
 
-.pricing-card-features {
-  margin: 0 0 1.75rem;
-  padding: 0;
-  list-style: none;
-  flex: 1;
+.pricing-card-prices {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--pr-border);
 }
 
-.pricing-card-features li {
-  position: relative;
-  padding-left: 1.125rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--pr-text);
+.pricing-card-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-.pricing-card-features li + li {
-  margin-top: 0.625rem;
+.pricing-card-price-row + .pricing-card-price-row {
+  margin-top: 0.75rem;
 }
 
-.pricing-card-features li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--pr-accent);
+.pricing-card-price-row--monthly {
+  align-items: baseline;
 }
 
-.pricing-card-status {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.5rem;
-  padding: 0 1rem;
-  border-radius: 999px;
-  background: var(--pr-card-muted);
-  border: 1px dashed var(--pr-border);
-  font-size: 0.8125rem;
-  font-weight: 600;
+.pricing-card-price-label {
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--pr-text-muted);
-  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.pricing-card-price-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--pr-text);
+  text-align: right;
+}
+
+.pricing-card-price-row--monthly .pricing-card-price-value {
+  font-size: 1.5rem;
+  color: var(--navy-900);
+}
+
+.pricing-card-price-unit {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--pr-text-muted);
+  margin-left: 0.125rem;
+}
+
+.pricing-card-custom {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--navy-900);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.pricing-card-desc {
+  margin: 0;
+  flex: 1;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--pr-text-muted);
+}
+
+.pricing-card--enterprise .pricing-card-desc {
+  margin-bottom: 1.25rem;
 }
 
 .pricing-card-cta {
@@ -217,9 +243,9 @@
 
 .pricing-table {
   width: 100%;
-  min-width: 640px;
+  min-width: 780px;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
 }
 
 .pricing-table thead th {
@@ -382,6 +408,109 @@
   color: var(--white);
 }
 
+/* Founding Partner */
+.pricing-founding {
+  background: var(--navy-950);
+}
+
+.pricing-founding-panel {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: 20px;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+  color: var(--pr-text);
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.2),
+    0 0 80px rgba(37, 99, 235, 0.1);
+}
+
+.pricing-founding-badge {
+  position: absolute;
+  top: -0.875rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 1.125rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue-600) 0%, #1d4ed8 100%);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  white-space: nowrap;
+}
+
+.pricing-founding-panel .eyebrow {
+  color: var(--blue-600);
+}
+
+.pricing-founding-panel h2 {
+  color: var(--pr-text);
+}
+
+.pricing-founding-lead {
+  color: var(--pr-text-muted) !important;
+}
+
+.pricing-founding-intro {
+  margin: 1.5rem auto 0;
+  max-width: 28rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: var(--pr-text-muted);
+}
+
+.pricing-founding-perks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 36rem;
+  margin: 1.5rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-founding-perks li {
+  position: relative;
+  padding: 0.875rem 1rem 0.875rem 1.75rem;
+  border-radius: 10px;
+  background: var(--pr-card);
+  border: 1px solid var(--pr-border);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--pr-text);
+  line-height: 1.4;
+}
+
+.pricing-founding-perks li::before {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pr-accent);
+}
+
+.pricing-founding-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pricing-founding-actions .btn-primary {
+  min-width: 14rem;
+}
+
 /* CTA */
 .pricing-cta {
   background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-950) 100%);
@@ -426,8 +555,18 @@
   border-top: 1px solid rgba(148, 163, 184, 0.12);
 }
 
+@media (max-width: 1280px) {
+  .pricing-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 1100px) {
   .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-founding-perks {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -445,5 +584,9 @@
 
   .pricing-card--featured {
     order: -1;
+  }
+
+  .pricing-founding-perks {
+    grid-template-columns: 1fr;
   }
 }
