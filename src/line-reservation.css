@@ -18,7 +18,7 @@
 }
 
 .page-line-reservation .flow-num,
-.page-line-reservation .product-badge {
+.page-line-reservation .product-status-badge {
   background: var(--accent-soft);
   color: var(--line-green);
 }

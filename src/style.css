@@ -679,7 +679,7 @@ body:not(.page-line-light) .footer-logo {
   margin-top: 0.35rem;
 }
 
-.product-badge {
+.product-status-badge {
   margin-top: auto;
   align-self: flex-start;
   padding: 0.35rem 0.75rem;
@@ -714,17 +714,17 @@ body:not(.page-line-light) .footer-logo {
   margin-bottom: 0;
 }
 
-.product-card:has(.product-link) .product-badge,
-.product-card:has(.product-actions) .product-badge {
+.product-card:has(.product-link) .product-status-badge,
+.product-card:has(.product-actions) .product-status-badge {
   margin-top: 0;
 }
 
-.product-badge-line {
+.product-status-badge--line {
   background: rgba(6, 199, 85, 0.15);
   color: var(--line-green);
 }
 
-.product-badge-assistant {
+.product-status-badge--assistant {
   background: rgba(37, 99, 235, 0.15);
   color: var(--blue-400);
 }
