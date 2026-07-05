@@ -297,9 +297,12 @@
   background: rgba(6, 199, 85, 0.12);
 }
 
-.pricing-check--no {
-  color: rgba(148, 163, 184, 0.5);
-  background: rgba(148, 163, 184, 0.06);
+.pricing-table tbody th .product-label {
+  color: var(--white-muted);
+}
+
+.pricing-table tbody th .product-label span:not(.product-label__name) {
+  font-weight: 500;
 }
 
 /* FAQ */

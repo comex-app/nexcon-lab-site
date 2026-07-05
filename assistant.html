@@ -26,9 +26,24 @@
         </a>
         <nav class="site-nav" aria-label="メインナビゲーション">
           <a href="/">Home</a>
-          <a href="/atlas">Atlas</a>
-          <a href="/line-reservation">LINE予約</a>
-          <a href="/assistant" class="nav-active">NexAssistant</a>
+          <a href="/atlas">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">Atlas</span>
+            </span>
+          </a>
+          <a href="/line-reservation">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">LINE予約</span>
+            </span>
+          </a>
+          <a href="/assistant" class="nav-active">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">NexAssistant</span>
+            </span>
+          </a>
           <a href="#contact">Contact</a>
         </nav>
         <button
@@ -45,9 +60,24 @@
       </div>
       <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
         <a href="/">Home</a>
-        <a href="/atlas">Atlas</a>
-        <a href="/line-reservation">LINE予約</a>
-        <a href="/assistant">NexAssistant</a>
+        <a href="/atlas">
+          <span class="product-label product-label--nav">
+            <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+            <span class="product-label__name">Atlas</span>
+          </span>
+        </a>
+        <a href="/line-reservation">
+          <span class="product-label product-label--nav">
+            <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+            <span class="product-label__name">LINE予約</span>
+          </span>
+        </a>
+        <a href="/assistant">
+          <span class="product-label product-label--nav">
+            <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+            <span class="product-label__name">NexAssistant</span>
+          </span>
+        </a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -56,8 +86,13 @@
       <!-- Hero -->
       <section class="assistant-hero section">
         <div class="container assistant-hero-inner">
-          <p class="assistant-eyebrow">Company AI Secretary</p>
-          <h1>NexAssistant</h1>
+          <div class="product-label product-label--stack assistant-hero-brand">
+            <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--lg" width="64" height="64" aria-hidden="true" />
+            <div>
+              <p class="assistant-eyebrow">Company AI Secretary</p>
+              <h1 class="product-label__name">NexAssistant</h1>
+            </div>
+          </div>
           <p class="assistant-subtitle">あなたの会社専属AI</p>
           <p class="assistant-lead">
             Atlas、LINE予約、今後の業務システムを一つにつなぐ<br class="hide-mobile" />
@@ -78,7 +113,7 @@
         <div class="container assistant-dashboard-inner">
           <article class="assistant-ai-card">
             <div class="assistant-ai-card-head">
-              <span class="assistant-ai-avatar" aria-hidden="true">N</span>
+              <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
               <div>
                 <strong>NexAssistant</strong>
                 <span>本日 9:00</span>
@@ -137,12 +172,12 @@
           </div>
           <div class="assistant-action-grid">
             <button type="button" class="assistant-action-card assistant-action-card--atlas">
-              <span class="assistant-action-icon" aria-hidden="true">A</span>
+              <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
               <span class="assistant-action-label">Atlas</span>
               <span class="assistant-action-desc">PC診断</span>
             </button>
             <button type="button" class="assistant-action-card assistant-action-card--line">
-              <span class="assistant-action-icon" aria-hidden="true">L</span>
+              <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
               <span class="assistant-action-label">LINE予約</span>
               <span class="assistant-action-desc">予約管理</span>
             </button>
@@ -181,24 +216,49 @@
             <li class="assistant-timeline-group">
               <p class="assistant-timeline-phase">現在</p>
               <div class="assistant-timeline-items">
-                <span class="assistant-timeline-chip assistant-timeline-chip--atlas">Atlas</span>
-                <span class="assistant-timeline-chip assistant-timeline-chip--line">LINE予約</span>
+                <span class="assistant-timeline-chip assistant-timeline-chip--atlas">
+                  <span class="product-label product-label--nav">
+                    <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                    <span class="product-label__name">Atlas</span>
+                  </span>
+                </span>
+                <span class="assistant-timeline-chip assistant-timeline-chip--line">
+                  <span class="product-label product-label--nav">
+                    <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                    <span class="product-label__name">LINE予約</span>
+                  </span>
+                </span>
               </div>
             </li>
             <li class="assistant-timeline-connector" aria-hidden="true"></li>
             <li class="assistant-timeline-group assistant-timeline-group--next">
               <p class="assistant-timeline-phase">次</p>
               <div class="assistant-timeline-items">
-                <span class="assistant-timeline-chip assistant-timeline-chip--accent">NexAssistant</span>
+                <span class="assistant-timeline-chip assistant-timeline-chip--accent">
+                  <span class="product-label product-label--nav">
+                    <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                    <span class="product-label__name">NexAssistant</span>
+                  </span>
+                </span>
               </div>
             </li>
             <li class="assistant-timeline-connector" aria-hidden="true"></li>
             <li class="assistant-timeline-group">
               <p class="assistant-timeline-phase">将来</p>
               <div class="assistant-timeline-items">
-                <span class="assistant-timeline-chip">Workflow</span>
+                <span class="assistant-timeline-chip">
+                  <span class="product-label product-label--nav">
+                    <img src="/product-badges/workflow.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                    <span class="product-label__name">Workflow</span>
+                  </span>
+                </span>
                 <span class="assistant-timeline-chip">Document AI</span>
-                <span class="assistant-timeline-chip">Analytics</span>
+                <span class="assistant-timeline-chip">
+                  <span class="product-label product-label--nav">
+                    <img src="/product-badges/analytics.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                    <span class="product-label__name">Analytics</span>
+                  </span>
+                </span>
               </div>
             </li>
           </ol>
@@ -219,7 +279,7 @@
     </main>
 
     <footer class="site-footer assistant-footer">
-      <div class="container footer-inner">
+      <div class="container footer-inner footer-inner--products">
         <img
           src="/logo-nexcon.svg"
           alt=""
@@ -228,7 +288,30 @@
           height="28"
           aria-hidden="true"
         />
-        <p>&copy; 2026 Nexcon Lab. All rights reserved.</p>
+        <div class="footer-products">
+          <p class="footer-products-title">Products</p>
+          <ul class="footer-products-list">
+            <li>
+              <a href="/atlas" class="product-label product-label--footer">
+                <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">Atlas</span>
+              </a>
+            </li>
+            <li>
+              <a href="/line-reservation" class="product-label product-label--footer">
+                <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">LINE予約</span>
+              </a>
+            </li>
+            <li>
+              <a href="/assistant" class="product-label product-label--footer">
+                <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">NexAssistant</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
       </div>
     </footer>
 

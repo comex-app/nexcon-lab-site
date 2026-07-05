@@ -1,5 +1,7 @@
 /* Nexcon Lab — dark navy / white / blue accent */
 
+@import "./product-badges.css";
+
 :root {
   --navy-950: #060d18;
   --navy-900: #0a1628;
@@ -267,9 +269,17 @@ a.platform-node--assistant:hover {
   color: var(--white-muted);
 }
 
-.platform-service h3 {
+.platform-service h3,
+.platform-service .product-label__name {
   margin: 0 0 0.25rem;
   font-size: 1.125rem;
+}
+
+.ecosystem-card h3,
+.ecosystem-card .product-label__name {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .platform-service-tagline {
@@ -411,12 +421,6 @@ a.platform-node--assistant:hover {
   font-size: 1.25rem;
   line-height: 1;
   opacity: 0.85;
-}
-
-.ecosystem-card h3 {
-  margin: 0 0 0.35rem;
-  font-size: 1rem;
-  font-weight: 600;
 }
 
 .ecosystem-card p {
@@ -824,10 +828,41 @@ body:not(.page-line-light) .footer-logo {
   opacity: 0.9;
 }
 
-.site-footer p {
+.site-footer p,
+.footer-copy {
   margin: 0;
   font-size: 0.8125rem;
   color: var(--white-muted);
+}
+
+.footer-inner--products {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 2rem 3rem;
+}
+
+.footer-products-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+}
+
+.footer-products-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-products-list li + li {
+  margin-top: 0.625rem;
+}
+
+.site-nav .product-label {
+  color: inherit;
 }
 
 .hide-mobile {
@@ -912,9 +947,11 @@ body:not(.page-line-light) .footer-logo {
     width: 100%;
   }
 
-  .footer-inner {
+  .footer-inner,
+  .footer-inner--products {
     flex-direction: column;
     align-items: flex-start;
+    grid-template-columns: 1fr;
   }
 
   .platform-services,

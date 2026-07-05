@@ -1,0 +1,146 @@
+/* Nexcon Lab — Product Badge System */
+
+:root {
+  --pb-radius-ratio: 0.25;
+  --pb-size-xs: 20px;
+  --pb-size-sm: 32px;
+  --pb-size-md: 48px;
+  --pb-size-lg: 64px;
+  --pb-size-xl: 80px;
+  --pb-gap: 0.5rem;
+  --pb-gap-md: 0.625rem;
+  --pb-gap-lg: 0.875rem;
+  --pb-name-size: 0.9375rem;
+  --pb-name-weight: 600;
+}
+
+.product-badge {
+  display: block;
+  flex-shrink: 0;
+  width: var(--pb-size-md);
+  height: var(--pb-size-md);
+  object-fit: contain;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.product-badge--xs {
+  width: var(--pb-size-xs);
+  height: var(--pb-size-xs);
+}
+
+.product-badge--sm {
+  width: var(--pb-size-sm);
+  height: var(--pb-size-sm);
+}
+
+.product-badge--md {
+  width: var(--pb-size-md);
+  height: var(--pb-size-md);
+}
+
+.product-badge--lg {
+  width: var(--pb-size-lg);
+  height: var(--pb-size-lg);
+}
+
+.product-badge--xl {
+  width: var(--pb-size-xl);
+  height: var(--pb-size-xl);
+}
+
+.product-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pb-gap);
+  line-height: 1.2;
+}
+
+.product-label__name {
+  font-size: var(--pb-name-size);
+  font-weight: var(--pb-name-weight);
+  letter-spacing: -0.01em;
+}
+
+.product-label--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--pb-gap-lg);
+}
+
+.product-label--card-head {
+  margin-bottom: 0.25rem;
+}
+
+.product-label--nav {
+  gap: 0.375rem;
+}
+
+.product-label--nav .product-label__name {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.product-label--footer {
+  gap: var(--pb-gap-md);
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.product-label--footer:hover {
+  opacity: 0.85;
+}
+
+.product-label--footer .product-label__name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.product-label--row-head {
+  gap: var(--pb-gap-md);
+}
+
+.product-label--row-head .product-label__name {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a:hover .product-badge,
+button:hover .product-badge,
+.product-label:hover .product-badge {
+  transform: scale(1.04);
+}
+
+a:active .product-badge,
+button:active .product-badge {
+  transform: scale(0.98);
+}
+
+.platform-node .product-label {
+  gap: 0.375rem;
+}
+
+.platform-node .product-label__name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.ecosystem-card .product-label--stack {
+  margin-bottom: 0.875rem;
+}
+
+.footer-products-list .product-label {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --pb-size-lg: 56px;
+    --pb-size-xl: 72px;
+  }
+
+  .product-label--nav .product-badge--xs {
+    width: 18px;
+    height: 18px;
+  }
+}

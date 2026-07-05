@@ -97,6 +97,25 @@
   margin-inline: auto;
 }
 
+.assistant-hero-brand {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.assistant-hero-brand .product-label__name {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.assistant-hero-brand .assistant-eyebrow {
+  text-align: left;
+}
+
 .assistant-eyebrow {
   margin: 0 0 0.75rem;
   font-size: 0.75rem;

@@ -36,8 +36,18 @@
         </a>
         <nav class="site-nav" aria-label="メインナビゲーション">
           <a href="/">Home</a>
-          <a href="/atlas" class="nav-active">Atlas</a>
-          <a href="/line-reservation">LINE予約</a>
+          <a href="/atlas" class="nav-active">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">Atlas</span>
+            </span>
+          </a>
+          <a href="/line-reservation">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">LINE予約</span>
+            </span>
+          </a>
           <a href="#contact">Contact</a>
         </nav>
         <button
@@ -54,8 +64,18 @@
       </div>
       <nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" hidden>
         <a href="/">Home</a>
-        <a href="/atlas">Atlas</a>
-        <a href="/line-reservation">LINE予約</a>
+        <a href="/atlas">
+          <span class="product-label product-label--nav">
+            <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+            <span class="product-label__name">Atlas</span>
+          </span>
+        </a>
+        <a href="/line-reservation">
+          <span class="product-label product-label--nav">
+            <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+            <span class="product-label__name">LINE予約</span>
+          </span>
+        </a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -67,16 +87,18 @@
           <div class="atlas-hero-copy">
             <div class="atlas-brand-row">
               <img
-                src="/atlas/logo-atlas.svg"
+                src="/product-badges/atlas.svg"
                 alt=""
-                class="atlas-product-logo"
+                class="product-badge product-badge--md"
                 width="48"
                 height="48"
                 aria-hidden="true"
               />
               <div>
                 <p class="eyebrow">Atlas Health Platform</p>
-                <p class="hero-product-name">Atlas / Health Platform</p>
+                <p class="hero-product-name product-label">
+                  <span class="product-label__name">Atlas</span> / Health Platform
+                </p>
               </div>
             </div>
             <h1>PCにも、<br class="hide-mobile" />健康診断を。</h1>
@@ -443,13 +465,34 @@
         <div class="footer-products">
           <p class="footer-products-title">Products</p>
           <ul class="footer-products-list">
-            <li><a href="/atlas">Atlas Health Platform</a></li>
-            <li><a href="/line-reservation">LINE予約システム</a></li>
+            <li>
+              <a href="/atlas" class="product-label product-label--footer">
+                <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">Atlas</span>
+              </a>
+            </li>
+            <li>
+              <a href="/line-reservation" class="product-label product-label--footer">
+                <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">LINE予約</span>
+              </a>
+            </li>
+            <li>
+              <a href="/assistant" class="product-label product-label--footer">
+                <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--sm" width="32" height="32" aria-hidden="true" />
+                <span class="product-label__name">NexAssistant</span>
+              </a>
+            </li>
           </ul>
         </div>
         <nav class="footer-nav" aria-label="フッターナビゲーション">
           <a href="/">Home</a>
-          <a href="/atlas">Atlas</a>
+          <a href="/atlas">
+            <span class="product-label product-label--nav">
+              <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+              <span class="product-label__name">Atlas</span>
+            </span>
+          </a>
           <a href="#contact">Contact</a>
         </nav>
         <p class="footer-copy">&copy; 2026 Nexcon Lab. All rights reserved.</p>
