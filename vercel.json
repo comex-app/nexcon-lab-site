@@ -3,6 +3,7 @@
     { "source": "/atlas", "destination": "/atlas.html" },
     { "source": "/assistant", "destination": "/assistant.html" },
     { "source": "/pricing", "destination": "/pricing.html" },
+    { "source": "/solutions", "destination": "/solutions.html" },
     { "source": "/partners", "destination": "/partners.html" },
     { "source": "/line-reservation", "destination": "/line-reservation.html" },
     { "source": "/line-reservation/demo/admin", "destination": "/line-reservation-demo-admin.html" },
