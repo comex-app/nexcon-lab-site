@@ -316,46 +316,114 @@
   background: rgba(37, 99, 235, 0.12);
 }
 
-/* Platform note — above comparison table */
-.pricing-platform-note {
-  display: flex;
-  align-items: flex-start;
-  gap: clamp(1.25rem, 3vw, 2rem);
-  max-width: 48rem;
+/* Platform Information — above comparison table */
+.pricing-platform-info {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(280px, 1.2fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  max-width: 56rem;
   margin: 2.5rem auto 0;
-  padding: clamp(1.75rem, 4vw, 2.5rem);
-  border-radius: var(--pr-radius);
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 20px;
   background: var(--pr-card);
   border: 1px solid var(--pr-border);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
-.pricing-platform-note-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+.pricing-platform-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 1rem;
 }
 
-.pricing-platform-note-copy {
-  flex: 1;
+.ppd-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ppd-row--middle {
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.ppd-connector--v {
+  width: 1px;
+  height: 1.25rem;
+  background: var(--pr-border);
+}
+
+.ppd-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--pr-border);
+  background: var(--pr-card-muted);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--pr-text);
+  white-space: nowrap;
+}
+
+.ppd-node--external {
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--pr-text-muted);
+  background: var(--pr-card);
+}
+
+.ppd-core {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.06);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blue-600);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.pricing-platform-info-copy {
   min-width: 0;
 }
 
-.pricing-platform-note-copy p {
-  margin: 0;
-  font-size: 0.9375rem;
-  line-height: 1.8;
-  color: var(--pr-text);
+.pricing-platform-info-copy .eyebrow {
+  color: var(--blue-600);
 }
 
-.pricing-platform-note-copy p + p {
+.pricing-platform-info-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--navy-900);
+}
+
+.pricing-platform-info-body p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--pr-text-muted);
+}
+
+.pricing-platform-info-body p + p {
   margin-top: 0.875rem;
 }
 
-.pricing-platform-note-copy p:first-child {
+.pricing-platform-info-body p:first-child {
   font-weight: 600;
   color: var(--navy-900);
-  letter-spacing: -0.01em;
 }
 
 /* Comparison feature cells */
@@ -745,16 +813,22 @@
     grid-template-columns: 1fr;
   }
 
-  .pricing-platform-note,
+  .pricing-platform-info,
   .pricing-philosophy-card {
+    grid-template-columns: 1fr;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    text-align: left;
   }
 
-  .pricing-platform-note-copy p:first-child,
+  .pricing-platform-diagram {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--pr-border);
+  }
+
+  .pricing-platform-info-body p:first-child,
   .pricing-philosophy-body p:first-child {
-    text-align: center;
+    text-align: left;
   }
 
   .pricing-feature-desc {

@@ -169,27 +169,47 @@
               どのプランが自社に合うか、機能単位で確認できます。
             </p>
           </div>
-          <div class="pricing-platform-note">
-            <img
-              src="/product-badges/platform.svg"
-              alt=""
-              class="pricing-platform-note-icon"
-              width="48"
-              height="48"
-              aria-hidden="true"
-            />
-            <div class="pricing-platform-note-copy">
-              <p>
-                Nexcon Oneは、単体のサービスではなく「つながるプラットフォーム」です。
-              </p>
-              <p>
-                Atlas・LINE予約・NexAssistantはすべて標準で連携し、
-                一度入力した情報を複数のサービスで活用できます。
-              </p>
-              <p>
-                さらにProfessional以上では、Google Workspaceや会計ソフトなど
-                外部サービスとも連携可能です。
-              </p>
+          <div class="pricing-platform-info">
+            <div class="pricing-platform-diagram" aria-label="Nexcon One Platform 接続図">
+              <div class="ppd-row ppd-row--top">
+                <span class="ppd-node">
+                  <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                  <span>NexAssistant</span>
+                </span>
+              </div>
+              <div class="ppd-connector ppd-connector--v" aria-hidden="true"></div>
+              <div class="ppd-row ppd-row--middle">
+                <span class="ppd-node">
+                  <img src="/product-badges/atlas.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                  <span>Atlas</span>
+                </span>
+                <span class="ppd-core">Nexcon One</span>
+                <span class="ppd-node">
+                  <img src="/product-badges/line.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
+                  <span>LINE予約</span>
+                </span>
+              </div>
+              <div class="ppd-connector ppd-connector--v" aria-hidden="true"></div>
+              <div class="ppd-row ppd-row--bottom">
+                <span class="ppd-node ppd-node--external">Google Workspace</span>
+                <span class="ppd-node ppd-node--external">freee</span>
+                <span class="ppd-node ppd-node--external">Slack</span>
+              </div>
+            </div>
+            <div class="pricing-platform-info-copy">
+              <p class="eyebrow">Platform Information</p>
+              <h3 class="pricing-platform-info-title">Nexcon One Platform</h3>
+              <div class="pricing-platform-info-body">
+                <p>Nexcon Oneは、単体のサービスではありません。</p>
+                <p>
+                  Atlas・LINE予約・NexAssistantは、最初からつながる One Platform です。
+                </p>
+                <p>製品同士の連携は、すべて標準機能。</p>
+                <p>
+                  Professional以上では、Google Workspace・会計ソフト・CRMなど
+                  外部システムとも接続できます。
+                </p>
+              </div>
             </div>
           </div>
           <div class="pricing-table-wrap">
@@ -252,22 +272,8 @@
                 </tr>
                 <tr>
                   <th scope="row" class="pricing-feature-cell">
-                    <span class="pricing-feature-title">製品間連携</span>
-                    <span class="pricing-feature-sub">（Nexcon One Platform）</span>
-                    <span class="pricing-feature-desc">Atlas → LINE予約 → NexAssistant</span>
-                  </th>
-                  <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
-                  <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
-                  <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
-                  <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
-                  <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <span class="product-label product-label--row-head">
-                      <img src="/product-badges/assistant.svg" alt="" class="product-badge product-badge--xs" width="20" height="20" aria-hidden="true" />
-                      <span>NexAssistant連携</span>
-                    </span>
+                    <span class="pricing-feature-title">Nexcon One製品連携</span>
+                    <span class="pricing-feature-desc">Atlas · LINE予約 · NexAssistant が最初から連携。一度入力した情報をすべての製品で共有</span>
                   </th>
                   <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
                   <td><span class="pricing-check pricing-check--yes" aria-label="含まれる">○</span></td>
@@ -277,8 +283,8 @@
                 </tr>
                 <tr>
                   <th scope="row" class="pricing-feature-cell">
-                    <span class="pricing-feature-title">外部システム連携</span>
-                    <span class="pricing-feature-desc">Google Calendar · freee · マネーフォワード · Slack · Teams · Salesforce · kintone · HubSpot など</span>
+                    <span class="pricing-feature-title">外部サービス連携</span>
+                    <span class="pricing-feature-desc">Google Calendar · Google Workspace · freee · マネーフォワード · Slack · Teams · Salesforce · kintone · HubSpot など</span>
                   </th>
                   <td><span class="pricing-check pricing-check--no" aria-label="含まれない">—</span></td>
                   <td><span class="pricing-check pricing-check--no" aria-label="含まれない">—</span></td>
@@ -316,10 +322,16 @@
               <h2>Pricing Philosophy</h2>
               <div class="pricing-philosophy-body">
                 <p>私たちは、機能を売っているのではありません。</p>
-                <p>時間を生み出し、人との信頼を育てるプラットフォームを提供しています。</p>
                 <p>
-                  そのため、Nexcon Oneでは製品同士の連携はすべて標準機能です。
-                  必要になったときだけ外部サービスとの連携を追加できます。
+                  人が何度も入力する仕事を減らし、人と人との信頼を育てる
+                  プラットフォームを提供しています。
+                </p>
+                <p>
+                  そのため Atlas・LINE予約・NexAssistant の連携は、すべて標準機能です。
+                </p>
+                <p>
+                  必要になった時だけ、Google Workspace・会計ソフトなど
+                  外部サービスとの連携を追加できます。
                 </p>
               </div>
             </div>
