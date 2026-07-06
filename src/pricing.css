@@ -297,6 +297,158 @@
   background: rgba(6, 199, 85, 0.12);
 }
 
+.pricing-check--no {
+  color: rgba(148, 163, 184, 0.5);
+  background: rgba(148, 163, 184, 0.06);
+}
+
+.pricing-check--option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--blue-400);
+  background: rgba(37, 99, 235, 0.12);
+}
+
+/* Platform note — above comparison table */
+.pricing-platform-note {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  max-width: 48rem;
+  margin: 2.5rem auto 0;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  border-radius: var(--pr-radius);
+  background: var(--pr-card);
+  border: 1px solid var(--pr-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-platform-note-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.pricing-platform-note-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.pricing-platform-note-copy p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--pr-text);
+}
+
+.pricing-platform-note-copy p + p {
+  margin-top: 0.875rem;
+}
+
+.pricing-platform-note-copy p:first-child {
+  font-weight: 600;
+  color: var(--navy-900);
+  letter-spacing: -0.01em;
+}
+
+/* Comparison feature cells */
+.pricing-feature-cell {
+  vertical-align: top;
+}
+
+.pricing-feature-title {
+  display: block;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.pricing-feature-sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--blue-400);
+}
+
+.pricing-feature-desc {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(148, 163, 184, 0.75);
+  max-width: 14rem;
+}
+
+.pricing-table tbody th.pricing-feature-cell {
+  color: var(--white-muted);
+}
+
+/* Pricing Philosophy */
+.pricing-philosophy {
+  background: var(--navy-800);
+}
+
+.pricing-philosophy-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 6vw, 3.5rem);
+  border-radius: 20px;
+  background: var(--pr-card);
+  border: 1px solid var(--pr-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-philosophy-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.pricing-philosophy-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pricing-philosophy-content .eyebrow {
+  color: var(--blue-600);
+}
+
+.pricing-philosophy-content h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  letter-spacing: -0.02em;
+  color: var(--navy-900);
+}
+
+.pricing-philosophy-body p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  color: var(--pr-text-muted);
+}
+
+.pricing-philosophy-body p + p {
+  margin-top: 1rem;
+}
+
+.pricing-philosophy-body p:first-child {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  line-height: 1.6;
+}
+
 .pricing-table tbody th .product-label {
   color: var(--white-muted);
 }
@@ -591,5 +743,21 @@
 
   .pricing-founding-perks {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-platform-note,
+  .pricing-philosophy-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pricing-platform-note-copy p:first-child,
+  .pricing-philosophy-body p:first-child {
+    text-align: center;
+  }
+
+  .pricing-feature-desc {
+    max-width: none;
   }
 }

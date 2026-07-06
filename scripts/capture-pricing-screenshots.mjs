@@ -28,15 +28,20 @@ await capture("01-pricing-hero-desktop.png", async (page) => {
 
 await capture("02-pricing-compare-desktop.png", async (page) => {
   await page.goto(`${base}/pricing`, { waitUntil: "networkidle" });
-  await page.locator(".pricing-compare").scrollIntoViewIfNeeded();
+  await page.locator(".pricing-platform-note").scrollIntoViewIfNeeded();
 });
 
-await capture("03-pricing-faq-cta-desktop.png", async (page) => {
+await capture("03-pricing-philosophy-desktop.png", async (page) => {
+  await page.goto(`${base}/pricing`, { waitUntil: "networkidle" });
+  await page.locator(".pricing-philosophy").scrollIntoViewIfNeeded();
+});
+
+await capture("04-pricing-faq-cta-desktop.png", async (page) => {
   await page.goto(`${base}/pricing`, { waitUntil: "networkidle" });
   await page.locator(".pricing-faq").scrollIntoViewIfNeeded();
 });
 
-await capture("04-pricing-mobile.png", async (page) => {
+await capture("05-pricing-mobile.png", async (page) => {
   await page.goto(`${base}/pricing`, { waitUntil: "networkidle" });
 }, { width: 390, height: 844 });
 
