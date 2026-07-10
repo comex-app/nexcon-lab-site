@@ -568,42 +568,153 @@ body:not(.page-line-light) .footer-logo {
   pointer-events: none;
 }
 
-/* Featured App */
+/* Brand Discovery — Featured App */
 .featured-app {
-  padding-top: 2rem;
-  padding-bottom: 2.5rem;
-  background: var(--navy-950);
+  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  background: linear-gradient(180deg, var(--navy-950) 0%, var(--navy-900) 100%);
 }
 
-.featured-app-card {
-  display: block;
-  padding: 2rem;
-  border: 1px solid rgba(37, 99, 235, 0.35);
+.featured-app-panel {
+  padding: clamp(2.5rem, 6vw, 4rem);
+  border: 1px solid rgba(148, 163, 184, 0.14);
   border-radius: var(--radius);
-  background: linear-gradient(165deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 33, 55, 0.6) 100%);
-  box-shadow:
-    0 0 40px rgba(37, 99, 235, 0.08),
-    var(--shadow);
-  color: inherit;
-  transition: border-color 0.2s, transform 0.15s;
+  background: linear-gradient(
+    165deg,
+    rgba(15, 33, 55, 0.72) 0%,
+    rgba(10, 22, 40, 0.92) 100%
+  );
+  box-shadow: var(--shadow);
 }
 
-a.featured-app-card:hover {
-  border-color: rgba(37, 99, 235, 0.5);
-  transform: translateY(-2px);
+.featured-app-head {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(2rem, 5vw, 3rem);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .featured-app-title {
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.featured-app-desc {
-  margin: 0 0 1.5rem;
-  max-width: 28rem;
+.featured-app-catch {
+  margin: 0;
+  max-width: 36rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.65;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.featured-app-body {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.featured-app-lead,
+.featured-app-closing {
+  margin: 0;
+  max-width: 42rem;
   color: var(--white-muted);
+  line-height: 1.85;
+}
+
+.featured-app-narrative {
+  display: grid;
+  gap: 0.5rem;
+  padding: clamp(1.5rem, 4vw, 2rem) 0;
+}
+
+.featured-app-narrative p {
+  margin: 0;
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
   line-height: 1.7;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+
+.featured-app-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.featured-app-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--white-muted);
+  line-height: 1.75;
+}
+
+.featured-app-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.375rem;
+  height: 1px;
+  background: rgba(148, 163, 184, 0.55);
+}
+
+.featured-app-meta {
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: calc(var(--radius) - 2px);
+  background: rgba(6, 13, 24, 0.35);
+}
+
+.featured-app-meta-note {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--blue-400);
+}
+
+.featured-app-facts {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.featured-app-facts div {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.featured-app-facts dt {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+}
+
+.featured-app-facts dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+.featured-app-cta {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.featured-app-footnote {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: rgba(203, 213, 225, 0.72);
 }
 
 /* Brand Discovery page */
